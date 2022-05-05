@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+}
+
+#VideoBackground {
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+  }
+
+  .video_container {
+      color: white;
+      z-index: 1000;
+}
+
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
