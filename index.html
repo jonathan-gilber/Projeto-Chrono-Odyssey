@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Individual | Jonathan Gilber</title>
     <link rel="stylesheet" href="estilo.css" />
+    <link rel="stylesheet" href="index.css">
     <script src="home.js"></script>
   </head>
 
   <body>
+    <!-- Hero -->
     <div class="hero">
       <video class="videoBackground" autoplay muted loop>
         <source src="./Assets/video1_background.mp4" type="video/mp4" />
@@ -22,16 +24,21 @@
             <button id="btn_down_arrow">
               <img id="down_arrow_img" src="./Assets/down_arrow.png" />
             </button>
+            <button id="btn_midia">MÍDIA</button>
+            <button id="btn_historia">HISTÓRIA</button>
           </div>
 
           <button id="btn_sessao" onclick="play()">INICIAR SESSÃO</button>
         </div>
 
-        <div class="overlay_conteudo"></div>
-        <p>Chrono Odyssey</p>
+        <div class="overlay_conteudo">
+            <p id="texto_hero">Chrono Odyssey</p>
+        </div>
+        
       </div>
     </div>
 
+    <!-- Conteúdo principal -->
     <div class="conteudo">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium odio
       vero doloribus amet cumque totam, hic non provident quod sapiente, enim
@@ -88,5 +95,34 @@
       Itaque veritatis ullam fugiat consequuntur quibusdam soluta odio sapiente
       architecto quas! Maiores, vero commodi. Doloremque, assumenda quis.
     </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="left">
+          <p>Sunbean SA | CNPJ: 60.746.948.0001-12</p>
+          <p>PORTABILIDADE | TRABALHE CONOSCO | SEGURANÇA | INVESTIDORES</p>
+        </div>
+
+        <div class="center">
+          <p>Cidade De Deus, S/Nº Vila Yara | Osasco | SP | CEP: 06029-900</p>
+          <p>
+            Copyright © 2020-2022 Sunbean Company S.L. Todos os direitos
+            reservados.
+          </p>
+        </div>
+
+        <div class="right">
+          <p>Siga-nos nas redes sociais!</p>
+          <div class="icones">
+            <a target="_blank" href="#"><img src="./Assets/Twitter.png" /></a>
+            <a target="_blank" href="#"><img src="./Assets/Facebook.png" /></a>
+            <a target="_blank" href="#"><img src="./Assets/Instagram.png" /></a>
+            <a target="_blank" href="#"><img src="./Assets/Linkedin.png" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
