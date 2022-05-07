@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto Individual | Jonathan Gilber</title>
+    <title>Chrono Odyssey | Início</title>
     <link rel="stylesheet" href="estilo.css" />
     <link rel="stylesheet" href="index.css">
     <script src="home.js"></script>
+    <link rel="shortcut icon" href="./Assets/favicon_chrono_odyssey.png" type="image/x-icon">
   </head>
 
   <body>
@@ -18,6 +19,7 @@
       </video>
 
       <div class="overlay_container">
+        <!-- navbar -->
         <div class="overlay_navbar">
           <div id="navbar_blocoEsq">
             <img id="assinatura" src="./assets/Assinatura.png" />
@@ -28,12 +30,18 @@
             <button id="btn_historia">HISTÓRIA</button>
           </div>
 
-          <button id="btn_sessao" onclick="play()">INICIAR SESSÃO</button>
+          <button id="btn_sessao">INICIAR SESSÃO</button>
         </div>
 
+        <!-- conteúdo hero -->
         <div class="overlay_conteudo">
-            <p id="texto_hero">Chrono Odyssey</p>
+          <div id="logo_container">
+            <img id="logo_CO" src="./Assets/logo_chrono_odyssey.png">
+            <span id="texto_logo">Um mundo onde tudo pode acontecer</span>
+            <button id="btn_saiba_mais">SAIBA MAIS</button>
+          </div>
         </div>
+        <button onclick="play()" id="btn_play"><img id="play_img" src="./Assets/play.png"></button>
         
       </div>
     </div>
