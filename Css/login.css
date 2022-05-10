@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  background-image: url("../Assets/login_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.conteudo {
+    height: 700px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #btn_sessao {
+    width: 100px;
+  }
+
+#validacao {
+  display: flex;
+  justify-content: center;
+}
+
+  #span_validacao {
+    color: red;
+    margin-top: 5px;
+    margin-bottom: -10px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .box {
+    background-color: #303030;
+    height: 550px;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+  }
+
+  .texto_inputs {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+  }
+
+  #texto_login {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+  }
+
+  .input_texto {
+    background-color: rgb(221, 221, 221);
+    border-radius: 4px;
+    border: 0;
+    height: 25px;
+    width: calc(100% - 10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      padding-left: 10px;
+  }
+
+  .box .container {
+    width: 75%;
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  #logo {
+    width: 50%;
+    margin-left: -5px;
+  }
+
+ .box .container2 {
+  width: 75%;
+  height: 55%;
+  color: #37474f;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-bottom: 1px solid grey;
+}
+
+ .LembrarUsuario_EsqueceuSenha {
+   margin-top: 15px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ #esqueceu_senha {
+   text-decoration: none;
+ }
+
+ .senha {
+   margin-top: 15px;
+ }
+
+ #span_lembrarUsuario {
+   color: rgb(255, 255, 255);
+   font-size: 12px;
+ }
+
+ #span_esqueceuSenha {
+   font-size: 12px;
+   cursor: pointer;
+ }
+
+#span_esqueceuSenha a{
+  color: #6C8A99;
+}
+
+ #btn_entrar {
+   width: 100%;
+   background-color: #6C8A99;
+   color: white;
+   border: 0;
+   border-radius: 4px;
+   height: 30px;
+   margin-top: 15px;
+   font-weight: bold;
+   cursor: pointer;
+ }
+
+ .div_cadastrar {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   margin-top: 20px;
+   color: black;
+   font-size: 12px;
+   font-weight: 500;
+ }
+
+ #nao_possui_conta {
+   margin: 0;
+  font-weight: 400;
+  color: white;
+ }
+
+ #a_cadastrar {
+   color: #6C8A99;
+   margin-left: 10px;
+   cursor: pointer;
+   text-decoration: none;
+ }
+
+ .box .container3 {
+  width: 75%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ #ou {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: grey;
+  margin-top: -5px;
+ }
+
+ .box .container_social {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+ }
