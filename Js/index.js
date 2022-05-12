@@ -9,6 +9,10 @@ function tocar() {
     window.location.href= "#ancora_conteudo"
   }
 
+  function galeria_midia() {
+    window.location.href= "#ancora_carrossel"
+  }
+
   // Define a data que queremos alcançar
   var countDownDate = new Date("Jul 5, 2022 15:37:25").getTime();
   

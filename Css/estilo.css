@@ -164,6 +164,7 @@ body::-webkit-scrollbar-thumb:active{
 
 .icones {
   width: 16px;
+  margin-top: -3px;
 }
 
 .footer .container2 {
@@ -219,4 +220,6 @@ body::-webkit-scrollbar-thumb:active{
 
 .texto2_footer:hover {
   background-color: #363636;
+  text-decoration: none;
+  color: white;
 }
