@@ -1,150 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chrono Odyssey | Início</title>
-    <link rel="stylesheet" href="./Css/estilo.css" />
-    <link rel="stylesheet" href="./Css/index.css">
-    <script src="./Js/index.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="./Assets/favicon_chrono_odyssey.png" type="image/x-icon">
-  </head>
 
-  <body>
-    <!-- Hero -->
-    <div class="hero">
-      <video class="videoBackground" autoplay muted loop>
-        <source src="./Assets/video1_background.mp4" type="video/mp4" />
-      </video>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chrono Odyssey | Início</title>
+  <link rel="stylesheet" href="./Css/estilo.css" />
+  <link rel="stylesheet" href="./Css/index.css">
+  <script src="./Js/index.js"></script>
+  <link rel="shortcut icon" href="./Assets/favicon_chrono_odyssey.png" type="image/x-icon">
+</head>
 
-      <div class="overlay_container">
-        <!-- navbar -->
-        <div class="overlay_navbar">
-          <div id="navbar_blocoEsq">
-            <img id="assinatura" src="./assets/Assinatura.png" />
-            <button id="btn_down_arrow" onclick="window.location.href='index.html'">
-              <img id="down_arrow_img" src="./Assets/down_arrow.png" />
-            </button>
-            <button id="btn_midia" onclick="galeria_midia()">MÍDIA</button>
-            <button id="btn_historia">HISTÓRIA</button>
-          </div>
-          <button id="btn_sessao" onclick="window.location.href='login.html'">INICIAR SESSÃO</button>
+<body>
+  <!-- Hero -->
+  <div class="hero">
+    <video class="videoBackground" autoplay muted loop>
+      <source src="./Assets/video1_background.mp4" type="video/mp4" />
+    </video>
+
+    <div class="overlay_container">
+      <!-- navbar -->
+      <div class="overlay_navbar">
+        <div id="navbar_blocoEsq">
+          <img id="assinatura" src="./assets/Assinatura.png" />
+          <button id="btn_down_arrow" onclick="window.location.href='index.html'">
+            <img id="down_arrow_img" src="./Assets/down_arrow.png" />
+          </button>
+          <button id="btn_midia" onclick="galeria_midia()">MÍDIA</button>
+          <button id="btn_historia">HISTÓRIA</button>
         </div>
 
-        <!-- conteúdo hero -->
-        <div class="overlay_conteudo">
-          <div id="logo_container">
-            <img id="logo_CO" src="./Assets/logo_chrono_odyssey.png">
-            <span id="texto_logo">Um mundo onde tudo pode acontecer</span>
-            <button id="btn_saiba_mais" onclick="saibaMais()">SAIBA MAIS</button>
-          </div>
-        </div>
-
-        <div onclick="tocar()" id="btn_play"><img id="play_img" src="./Assets/play.png"><span id="texto_play">TOCAR MÚSICA<span></div>
-
-      </div>
-    </div>
-
-    <!-- Conteúdo principal -->
-    <div id="ancora_conteudo" class="conteudo">
-      <div class="conteudo_container">
-        <div class="bloco1">
-          <div class="bloco1_container">
-            <p class="bloco1_container_texto_titulo">Explore lugares épicos</p>
-            <p class="bloco1_container_texto">De Cavernas Profundas a Castelos Imponentes, Lute Em Lugares Incríveis e Conquiste Vitórias Lendárias! Viaje Por Estradas Repletas de Camponeses, Caravanas e Comitivas de Nobres - Mas Também Bandidos, Mercenários e Monstros Errantes! Explore Templos Escondidos Nas Profundezas de Florestas, Lar de Druidas - Ou Covil de Dragões! Embrenhe-Se Em Cavernas Repletas de Armadilhas, Onde Esqueletos de Aventureiros Misturam-Se a Tesouros Ancestrais! Defenda Um Castelo de Hordas Invasores, Ou Ataque-O e Conquiste-O para Sua Própria Glória!</p>
-          </div>
-        </div>
-
-        <div class="bloco2">
-          <div class="bloco2_container">
-            <p class="bloco2_container_texto_titulo">Visuais Deslumbrantes</p>
-            <p class="bloco2_container_texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum excepturi explicabo cumque, dolorem sit amet aliquid sint quia dolorum harum itaque eveniet officia provident quas delectus exercitationem obcaecati quasi iure.</p>
-          </div>
+        <div id="navbar_blocoDir">
+          <button id="btn_iniciar" onclick="window.location.href='login.html'">INICIAR SESSÃO</button>
+          <button id="btn_juntar" onclick="window.location.href='cadastro.html'">JUNTAR-SE</button>
         </div>
       </div>
-    </div>
 
-    <!-- Carrossel -->
-    <div id="ancora_carrossel" class="containerCarrossel">
-    <div class="containerCarrossel2">
-      <h2>Galeria de Mídia</h2>  
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
-          <li data-target="#myCarousel" data-slide-to="4"></li>
-        </ol>
-    
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="https://images9.gry-online.pl/galeria/galeria_duze3/354188843.jpg" alt="Chicago" style="width:100%;">
-          </div>
-        
-          <div class="item">
-            <img src="https://gameomatic.fr/content/images/2020/12/detail_11-1.jpg" alt="New york" style="width:100%;">
-          </div>
-
-          <div class="item">
-            <img src="https://www.mobilegamer.com.br/wp-content/uploads/2020/12/chrono-odyssey-android-ios-2.jpg" alt="New york" style="width:100%;">
-          </div>
-
-          <div class="item">
-            <img src="https://i2.wp.com/omnigeekempire.com/wp-content/uploads/2021/03/Chrono-Odyssey_2020_12-04-20_002.jpg?fit=3000%2C1389" alt="New york" style="width:100%;">
-          </div>
-
-          <div class="item">
-            <img src="https://picfiles.alphacoders.com/401/401780.jpg" alt="New york" style="width:100%;">
-          </div>
+      <!-- conteúdo hero -->
+      <div class="overlay_conteudo">
+        <div id="logo_container">
+          <img id="logo_CO" src="./Assets/logo_chrono_odyssey.png">
+          <span id="texto_logo">Um mundo onde tudo pode acontecer</span>
+          <button id="btn_saiba_mais" onclick="saibaMais()">SAIBA MAIS</button>
         </div>
-    
-        <!-- Botões da esquerda e direita -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-          <span class="sr-only">Next</span>
-        </a>
+      </div>
+
+      <div onclick="tocar()" id="btn_play"><img id="play_img" src="./Assets/play.png"><span id="texto_play">TOCAR
+          MÚSICA<span></div>
+
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="ancora_conteudo" class="conteudo">
+    <div class="conteudo_container">
+      <div class="bloco1">
+        <div class="bloco1_container">
+          <p class="bloco1_container_texto_titulo">Explore lugares épicos</p>
+          <p class="bloco1_container_texto">De Cavernas Profundas a Castelos Imponentes, Lute Em Lugares Incríveis e
+            Conquiste Vitórias Lendárias! Viaje Por Estradas Repletas de Camponeses, Caravanas e Comitivas de Nobres -
+            Mas Também Bandidos, Mercenários e Monstros Errantes! Explore Templos Escondidos Nas Profundezas de
+            Florestas, Lar de Druidas - Ou Covil de Dragões! Embrenhe-Se Em Cavernas Repletas de Armadilhas, Onde
+            Esqueletos de Aventureiros Misturam-Se a Tesouros Ancestrais! Defenda Um Castelo de Hordas Invasores, Ou
+            Ataque-O e Conquiste-O para Sua Própria Glória!</p>
+        </div>
+      </div>
+
+      <div class="bloco2">
+        <div class="bloco2_container">
+          <p class="bloco2_container_texto_titulo">Visuais Deslumbrantes</p>
+          <p class="bloco2_container_texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum excepturi
+            explicabo cumque, dolorem sit amet aliquid sint quia dolorum harum itaque eveniet officia provident quas
+            delectus exercitationem obcaecati quasi iure.</p>
+        </div>
       </div>
     </div>
   </div>
 
-    <!-- Contagem Regressiva -->
-    <div class="contador">
-      <p id="contagem_texto">Lançamento em</p>
+  <!-- Galeria de Midias -->
+  <div id="ancora_galeria" class="container_galeria">
+    <p id="galeria_texto">Galeria de Mídia</p>
+    <div class="linha1">
+      <img src="https://xboxpower-wp.s3.amazonaws.com/wp-content/uploads/2020/12/MMORPG-Chrono-Odyssey-1.jpg">
+      <img src="https://i.ytimg.com/vi/XUeCMUyTD9E/maxresdefault.jpg">
+      <img src="https://images9.gry-online.pl/galeria/galeria_duze3/354182703.jpg">
+    </div>
+
+    <div class="linha2">
+      <img src="https://www.mobilegamer.com.br/wp-content/uploads/2020/12/chrono-odyssey-android-ios-2.jpg">
+      <img src="https://picfiles.alphacoders.com/401/401780.jpg">
+      <img src="https://mmoculture.com/wp-content/uploads/2020/12/Chrono-Odyssey-teaser-screenshot-6.jpg">
+    </div>
+
+    <div class="linha3">
+      <img src="https://gameomatic.fr/content/images/2020/12/detail_11-1.jpg">
+      <img
+        src="https://i2.wp.com/omnigeekempire.com/wp-content/uploads/2021/03/Chrono-Odyssey_2020_12-04-20_002.jpg?fit=3000%2C1389">
+      <img src="https://images9.gry-online.pl/galeria/galeria_duze3/354188843.jpg">
+    </div>
+  </div>
+
+  <!-- Contagem Regressiva -->
+  <div class="contador">
+    <p id="contagem_texto">Lançamento em</p>
     <p id="demo"></p>
     <button id="btn_adquira">ADQUIRA JÁ</button>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container1">
+      <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Twitter.png" /></a>
+      <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Facebook.png" /></a>
+      <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Instagram.png" /></a>
+      <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Linkedin.png" /></a>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-      <div class="container1">
-        <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Twitter.png" /></a>
-        <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Facebook.png" /></a>
-        <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Instagram.png" /></a>
-        <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Linkedin.png" /></a>
-      </div>
-      
-      <div class="container2">
-        <img id="assinatura_footer" src="./Assets/Assinatura_cinza.png">
-      </div>
-      
-      <div class="container3">
-        <p id="texto1_footer">Este site foi desenvolvido durante o projeto de avaliação individual, requisitado pela SPTech School e desenvolvido com amor por um aluno. © 2022 Jonathan Gilber, Co.</p>
-      </div>
-      
-      <div class="container4">
-        <a class="texto2_footer">POLÍTICA DE PRIVACIDADE</a><a class="texto2_footer">TERMOS DE USO</a><a class="texto2_footer">PREFERÊNCIA DE COOKIES</a>
-      </div>
+    <div class="container2">
+      <img id="assinatura_footer" src="./Assets/Assinatura_cinza.png">
     </div>
 
-  </body>
+    <div class="container3">
+      <p id="texto1_footer">Este site foi desenvolvido durante o projeto de avaliação individual, requisitado pela
+        SPTech School e desenvolvido com amor por um aluno. © 2022 Jonathan Gilber, Co.</p>
+    </div>
+
+    <div class="container4">
+      <a class="texto2_footer">POLÍTICA DE PRIVACIDADE</a><a class="texto2_footer">TERMOS DE USO</a><a
+        class="texto2_footer">PREFERÊNCIA DE COOKIES</a>
+    </div>
+  </div>
+
+</body>
 </html>

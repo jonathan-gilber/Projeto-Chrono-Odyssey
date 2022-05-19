@@ -37,7 +37,6 @@ body::-webkit-scrollbar-thumb:active{
   width: 100%;
   height: 12%;
   color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,6 +50,33 @@ body::-webkit-scrollbar-thumb:active{
   display: flex;
   align-items: center;
   margin-left: 10px;
+}
+
+#btn_iniciar {
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 13px;
+  border: 0;
+  cursor: pointer;
+  padding: 0 15px 0 15px;
+  border-radius: 5px;
+  height: 40px;
+  margin-right: 5px;
+  transition: all 0.4s ease-in-out;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#btn_iniciar:hover {
+  border-bottom: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#navbar_blocoDir {
+  width: auto;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #assinatura {
@@ -89,6 +115,7 @@ body::-webkit-scrollbar-thumb:active{
   height: 40px;
   margin-left: 20px;
   transition: all 0.4s ease-in-out;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #btn_midia:hover {
@@ -107,6 +134,7 @@ body::-webkit-scrollbar-thumb:active{
   height: 40px;
   margin-left: 5px;
   transition: all 0.4s ease-in-out;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #btn_historia:hover {
@@ -114,7 +142,7 @@ body::-webkit-scrollbar-thumb:active{
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-#btn_sessao {
+#btn_juntar {
   color: white;
   background-color: rgba(255, 255, 255, 0.2);
   font-size: 13px;
@@ -125,9 +153,10 @@ body::-webkit-scrollbar-thumb:active{
   height: 40px;
   margin-right: 20px;
   transition: all 0.4s ease-in-out;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#btn_sessao:hover {
+#btn_juntar:hover {
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
 }
 
