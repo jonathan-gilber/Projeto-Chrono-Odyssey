@@ -13,6 +13,22 @@ function galeria_midia() {
   window.location.href = "#ancora_galeria";
 }
 
+// Altera a imagem do frame principal na galeria de midias
+function frame_principal() {
+  //frame_principal.style.backgroundImage = "url('img_tree.png')";
+  if (document.getElementById('c1f1').clicked == true) {
+    alert("botão 1");
+  }
+
+  else if (document.getElementById('c1f2').clicked == true) {
+    alert("botão 2");
+  }
+
+  else {
+    alert("a")
+  }
+}
+
 // Define a data que queremos alcançar
 var countDownDate = new Date("Jul 5, 2022 15:37:25").getTime();
 
