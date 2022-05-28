@@ -182,13 +182,25 @@ body {
   }
 
   /* Galeria de mídias */
+  .galeria_texto_div {
+    margin-left: 10%;
+  }
+
+  .galeria_texto {
+    font-size: 38px;
+    margin: 70px 0 10px 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-variant: small-caps;
+  }
+
   .container_galeria {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 50px 0 50px 0;
+    padding: 0 0 100px 0;
   }
 
   .frame_principal {
@@ -198,6 +210,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: all 0.4s ease-in-out;
   }
 
   .frames_secundarios {
@@ -214,7 +227,7 @@ body {
   }
 
   .frames_secundarios div:hover {
-    transform: scale(1.2, 1.2);
+    transform: scale(1.15, 1.15);
   }
 
   #container1 {
@@ -372,4 +385,186 @@ body {
 #btn_adquira:hover {
   background-color: #ffffff;
   color: #202020;
+}
+
+/* Div modelo pop-up com display none*/
+#div_login {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: fixed;
+}
+
+/* Tela de login */
+.conteudo_login {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#validacao {
+display: flex;
+justify-content: center;
+}
+
+#span_validacao {
+  color: red;
+  margin-top: 5px;
+  margin-bottom: -10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.box {
+  background-color: #ffffff;
+  height: 550px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.texto_inputs {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #37474f;
+}
+
+#texto_login {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  color: black;
+  margin-top: 30px;
+}
+
+.input_texto {
+  background-color: rgb(221, 221, 221);
+  border-radius: 4px;
+  border: 0;
+  height: 25px;
+  width: calc(100% - 10px);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    padding-left: 10px;
+}
+
+.box .container {
+  width: 75%;
+  height: 20%;
+  display: flex;
+  align-items: flex-end;
+}
+
+#logo {
+  width: 50%;
+  margin-left: -18px;
+}
+
+.box .container2 {
+width: 75%;
+height: 55%;
+color: #37474f;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.LembrarUsuario_EsqueceuSenha {
+ margin-top: 15px;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+}
+
+#esqueceu_senha {
+ text-decoration: none;
+}
+
+.senha {
+ margin-top: 15px;
+}
+
+#span_lembrarUsuario {
+ color: black;
+ font-size: 12px;
+}
+
+#span_esqueceuSenha {
+ font-size: 12px;
+ cursor: pointer;
+}
+
+#span_esqueceuSenha a{
+color: #e7ca70;
+}
+
+#btn_entrar {
+ width: 100%;
+ background-color: #e7ca70;
+ color: white;
+ border: 0;
+ border-radius: 5px;
+ height: 30px;
+ margin-top: 15px;
+ font-weight: bold;
+ cursor: pointer;
+ transition: all 0.4s ease-in-out;
+}
+
+#btn_entrar:hover {
+  background-color: #ffffff;
+  color: #202020;
+}
+
+.div_cadastrar {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ margin-top: 20px;
+ color: black;
+ font-size: 12px;
+ font-weight: 500;
+}
+
+#nao_possui_conta {
+ margin: 0;
+font-weight: 400;
+font-size: 13px;
+margin-top: -6px;
+color: black;
+}
+
+#a_cadastrar {
+ color: #e7ca70;
+ margin-left: 10px;
+ cursor: pointer;
+ text-decoration: none;
+ margin-top: -6px;
+}
+
+.box .container3 {
+width: 75%;
+height: 20%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+#btn_fechar_login {
+  background-color: #d6b034;
+  color: rgb(0, 0, 0);
+  padding: 5px 8px 5px 8px;
+  border-radius: 20px;
+  align-self: flex-end;
+  margin-right: -8px;
+  margin-top: -8px;
+  cursor: pointer;
 }

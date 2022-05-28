@@ -32,7 +32,7 @@
         </div>
 
         <div id="navbar_blocoDir">
-          <button id="btn_iniciar" onclick="window.location.href='login.html'">INICIAR SESSÃO</button>
+          <button id="btn_iniciar" onclick="popup_login()">INICIAR SESSÃO</button>
           <button id="btn_juntar" onclick="window.location.href='cadastro.html'">JUNTAR-SE</button>
         </div>
       </div>
@@ -79,30 +79,34 @@
   </div>
 
   <!-- Galeria de Midias -->
-  <div id="ancora_galeria" class="container_galeria">
-    <div class="frame_principal"></div>
+  <div id="ancora_galeria" class="galeria_texto_div">
+     .
+    <p class="galeria_texto">Galeria de Mídias</p>
+  </div>
+  <div class="container_galeria">
+    <div id="imagem_atual" class="frame_principal"></div>
       <div class="frames_secundarios">
         <div id="container1">
-          <div onclick="frame_principal()" id="c1f1"></div>
-          <div onclick="frame_principal()" id="c1f2"></div>
+          <div onclick="frame_principal1()" id="c1f1"></div>
+          <div onclick="frame_principal2()" id="c1f2"></div>
         </div>
 
         <div id="container2">
-          <div onclick="frame_principal()" id="c2f1"></div>
-          <div onclick="frame_principal()" id="c2f2"></div>
+          <div onclick="frame_principal3()" id="c2f1"></div>
+          <div onclick="frame_principal4()" id="c2f2"></div>
         </div>
 
         <div id="container3">
-          <div onclick="frame_principal()" id="c3f1"></div>
-          <div onclick="frame_principal()" id="c3f2"></div>
+          <div onclick="frame_principal5()" id="c3f1"></div>
+          <div onclick="frame_principal6()" id="c3f2"></div>
         </div>
 
         <div id="container4">
-          <div onclick="frame_principal()" id="c4f1"></div>
-          <div onclick="frame_principal()" id="c4f2"></div>
+          <div onclick="frame_principal7()" id="c4f1"></div>
+          <div onclick="frame_principal8()" id="c4f2"></div>
         </div>
       </div>
-  </div>
+    </div>
 
   <!-- Contagem Regressiva -->
   <div class="contador">
@@ -130,10 +134,55 @@
     </div>
 
     <div class="container4">
-      <a class="texto2_footer">POLÍTICA DE PRIVACIDADE</a><a class="texto2_footer">TERMOS DE USO</a><a
-        class="texto2_footer">PREFERÊNCIA DE COOKIES</a>
+      <a class="texto2_footer">POLÍTICA DE PRIVACIDADE</a>
+      <a class="texto2_footer">TERMOS DE USO</a>
+      <a class="texto2_footer">PREFERÊNCIA DE COOKIES</a>
     </div>
   </div>
+
+    <!-- Divs modelo pop-ups com display none -->
+    <div id="div_login">
+  <div class="conteudo_login">
+    <!-- bloco direito -->
+    <div class="box">
+      <div id="btn_fechar_login" onclick="fechar_popup_login()">X</div>
+      <div class="container">
+        <img id="logo" src="./assets/Assinatura_cinza.png" />
+      </div>
+
+      <div class="container2">
+        <p id='texto_login'>Login</p>
+
+        <div>
+          <p class="texto_inputs">E-mail</p>
+          <input id="input_email_login" class="input_texto" type="text" placeholder="Exemplo@hotmail.com" />
+        </div>
+
+        <div class="senha">
+          <p class="texto_inputs">Senha</p>
+          <input id="input_senha_login" class="input_texto" type="password" placeholder="Inserir Senha" />
+        </div>
+
+        <div id="validacao">
+        <span id="span_validacao"></span>
+        </div>
+
+        <div class="LembrarUsuario_EsqueceuSenha">
+          <span id="span_lembrarUsuario"><input type="checkbox"> Lembrar Usuário</span>
+          <span id="span_esqueceuSenha"><a id="esqueceu_senha" href="#">Esqueceu sua senha?</a></span>
+        </div>
+
+        <div>
+          <button id="btn_entrar" onclick="validLogin()">Entrar</button>
+        </div>
+
+        <div class="div_cadastrar">
+          <p id="nao_possui_conta">Não possui uma conta ainda?</p> <a href="cadastro.html" id="a_cadastrar">Faça parte da jornada</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

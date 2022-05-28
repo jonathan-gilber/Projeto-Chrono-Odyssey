@@ -13,20 +13,50 @@ function galeria_midia() {
   window.location.href = "#ancora_galeria";
 }
 
+// Abre pop-up de login
+function popup_login() {
+  div_login.style.display = "flex"
+}
+
+// Fecha pop-up de login
+function fechar_popup_login() {
+  div_login.style.display = "none"
+  input_email_login.style.border = "none";
+  input_senha_login.style.border = "none";
+  span_validacao.innerHTML = "";
+}
+
 // Altera a imagem do frame principal na galeria de midias
-function frame_principal() {
-  //frame_principal.style.backgroundImage = "url('img_tree.png')";
-  if (document.getElementById('c1f1').clicked == true) {
-    alert("botão 1");
-  }
+function frame_principal1() {
+imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chrono_odyssey_mmorpg-scaled.jpg')"
+}
 
-  else if (document.getElementById('c1f2').clicked == true) {
-    alert("botão 2");
-  }
+function frame_principal2() {
+  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_west-scaled.jpg')"
+}
 
-  else {
-    alert("a")
-  }
+function frame_principal3() {
+  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_cuando_sale-scaled.jpg')"
+}
+
+function frame_principal4() {
+  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_ps5-scaled.jpg')"
+}
+
+function frame_principal5() {
+  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_como_jugar-scaled.jpg')"
+}
+
+function frame_principal6() {
+  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_gremios-scaled.jpg')"
+}
+
+function frame_principal7() {
+  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_pvp-1-scaled.jpg')"
+}
+
+function frame_principal8() {
+  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_rvr-scaled.jpg')"
 }
 
 // Define a data que queremos alcançar
@@ -50,3 +80,57 @@ var x = setInterval(function () {
   document.getElementById("demo").innerHTML =
     days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 }, 1000);
+
+
+
+// Validação tela de login
+function validLogin() {
+  /* verifica se há algum input vazio */
+  if (input_email_login.value == "" || input_senha_login.value == "") {
+    span_validacao.innerHTML = "Por favor preencha todos os campos";
+    texto_login.style.marginTop = "30px";
+    input_email_login.style.border = "thin solid #FF0000";
+    input_senha_login.style.border = "thin solid #FF0000";
+
+    /* marca a input email */
+    if (input_email_login.value !== "") {
+      input_email_login.style.border = "none";
+    } else {
+      input_email_login.style.border = "thin solid #FF0000";
+    }
+
+    /* marca a input senha */
+    if (input_senha_login.value !== "") {
+      input_senha_login.style.border = "none";
+    } else {
+      input_senha_login.style.border = "thin solid #FF0000";
+    }
+  } else {
+    /* tira as marcações das inputs já preenchidas */
+    input_email_login.border = "none";
+    input_senha_login.style.border = "none";
+
+    /* Valida se o email possui mais de 10 caracteres */
+    if (input_email_login.value.length < 10) {
+      input_email_login.style.border = "thin solid #FF0000";
+      input_senha_login.style.border = "none";
+      span_validacao.innerHTML =
+        "Email inválido, deve conter no mínimo 10 digitos";
+    } else if (input_email_login.value.indexOf("@") == -1) {
+
+      /* Valida se o email possui "@" */
+      input_email_login.style.border = "thin solid #FF0000";
+      span_validacao.innerHTML = 'Email inválido, deve conter "@"';
+    } else if (input_senha_login.value.length < 8) {
+
+      /* Valida se a senha tem mais de 8 caracteres */
+      input_senha_login.style.border = "thin solid #FF0000";
+      input_email_login.style.border = "none";
+      span_validacao.innerHTML = "Senha deve conter no mínimo 8 digitos";
+    } else {
+
+      /* Confirma o login e abre a tela de monitoramento */
+      window.location.href = "index.html";
+    }
+  }
+}
