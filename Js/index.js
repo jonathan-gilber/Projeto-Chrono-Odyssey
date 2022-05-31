@@ -1,9 +1,3 @@
-// tocar música com o botão de play
-function tocar() {
-  var audio = new Audio("./Assets/Index_Audio.mp3");
-  audio.play();
-}
-
 // Âncora até determinado elemento da página
 function saibaMais() {
   window.location.href = "#ancora_conteudo";
@@ -11,6 +5,61 @@ function saibaMais() {
 
 function galeria_midia() {
   window.location.href = "#ancora_galeria";
+}
+
+// Toggle para o botão drop-down
+var b = true
+
+function toggle() {
+   b = !b;
+
+   if (b == false) {
+    drop_menu.style.height = "350px"
+    window.location.href = "#drop_menu"
+    down_arrow_img.src = "./assets/up_arrow.png"
+   } else {
+    drop_menu.style.height = "0px"
+    down_arrow_img.src = "./assets/down_arrow.png"
+   }
+  }
+
+  // toggle para o botão play/pause
+  var c = true
+  var x = document.getElementById("myAudio"); 
+
+  function toggleMusica() {
+    c = !c; console.log(c)
+ 
+    if (c == false) {
+      texto_play.innerHTML = `PAUSAR MÚSICA`
+      play_img.src = "./assets/pause_icon.png"
+      play_img.style.width = "18px"
+      var x = document.getElementById("myAudio"); 
+      x.play(); 
+    } else {
+      texto_play.innerHTML = `TOCAR MÚSICA`
+      play_img.src = "./assets/play_icon.png"
+      play_img.style.width = "16px"
+      var x = document.getElementById("myAudio"); 
+      x.pause(); 
+    }
+   }
+
+// Exibir botão de scroll up
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    ScrollUp.style.display = "block";
+  } else {
+    ScrollUp.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 
 // Abre pop-up de login
@@ -80,8 +129,6 @@ var x = setInterval(function () {
   document.getElementById("demo").innerHTML =
     days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 }, 1000);
-
-
 
 // Validação tela de login
 function validLogin() {

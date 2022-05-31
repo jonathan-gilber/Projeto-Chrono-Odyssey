@@ -13,31 +13,70 @@
 </head>
 
 <body>
+  <!-- Menu superior -->
+  <div id="drop_menu">
+    <div class="drop_menu_container">
+      <div class="box1">
+        <div class="conjunto1"></div>
+        <div class="conjunto2">
+          <p>Site elaborado e desenvolvido por Jonathan Gilber durante o projeto de avaliação individual SPTech, usando técnicas e práticas ensinadas nas matérias de algoritmo e pesquisa e inovação.
+          </p>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="div_projetos">OUTROS PROJETOS</div>
+        <button>ACCLIMATE</button>
+        <button>SUNBEAN</button>
+        <button>TRIPPIE REDD</button>
+        <button>SHXP LIFE</button>
+      </div>
+
+      <div class="box3">
+        <div class="conjunto1"></div>
+        <div class="conjunto2">
+          <p id="p_titulo">Shxp Life</p>
+          <p>A Shxp Life é uma loja de roupas e acessórios inaugurada em 2019, pensada e desenvolvida para os amantes de stret wear, skate e esportes em gerais.
+          </p>
+        </div>
+      </div>
+
+      <div class="box4">
+        <div class="conjunto1"></div>
+        <div class="conjunto2">
+          <p id="p_titulo">Sunbean</p>
+          <p>A sunbean é uma empresa de tecnologia e soluções agropecuárias, que visa implementar sistemas para capturar e gerenciar os dados de umidade e temperatura de suas plantações.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div id="id_navbar" class="overlay_navbar">
+    <div id="navbar_blocoEsq">
+      <img id="assinatura" src="./assets/Assinatura.png" />
+      <button id="btn_down_arrow" onclick="toggle()">
+        <img id="down_arrow_img" src="./Assets/down_arrow.png" />
+      </button>
+      <button id="btn_midia" onclick="galeria_midia()">MÍDIA</button>
+      <button id="btn_historia" onclick="fechar_drop_menu()">HISTÓRIA</button>
+    </div>
+
+    <div id="navbar_blocoDir">
+      <button id="btn_iniciar" onclick="popup_login()">INICIAR SESSÃO</button>
+      <button id="btn_juntar" onclick="window.location.href='cadastro.html'">JUNTAR-SE</button>
+    </div>
+  </div>
+
   <!-- Hero -->
   <div class="hero">
     <video class="videoBackground" autoplay muted loop>
       <source src="./Assets/video1_background.mp4" type="video/mp4" />
     </video>
 
+    <!-- conteúdo hero -->
     <div class="overlay_container">
-      <!-- navbar -->
-      <div class="overlay_navbar">
-        <div id="navbar_blocoEsq">
-          <img id="assinatura" src="./assets/Assinatura.png" />
-          <button id="btn_down_arrow" onclick="window.location.href='index.html'">
-            <img id="down_arrow_img" src="./Assets/down_arrow.png" />
-          </button>
-          <button id="btn_midia" onclick="galeria_midia()">MÍDIA</button>
-          <button id="btn_historia">HISTÓRIA</button>
-        </div>
-
-        <div id="navbar_blocoDir">
-          <button id="btn_iniciar" onclick="popup_login()">INICIAR SESSÃO</button>
-          <button id="btn_juntar" onclick="window.location.href='cadastro.html'">JUNTAR-SE</button>
-        </div>
-      </div>
-
-      <!-- conteúdo hero -->
       <div class="overlay_conteudo">
         <div id="logo_container">
           <img id="logo_CO" src="./Assets/logo_chrono_odyssey.png">
@@ -46,9 +85,13 @@
         </div>
       </div>
 
-      <div onclick="tocar()" id="btn_play"><img id="play_img" src="./Assets/play.png"><span id="texto_play">TOCAR
-          MÚSICA<span></div>
+      <audio id="myAudio">
+        <source src="./Assets/Index_Audio.mp3" type="audio/mpeg">
+      </audio>
 
+      <div onclick="toggleMusica()" id="btn_play"><img id="play_img" src="./Assets/play_icon.png"><span
+          id="texto_play">TOCAR
+          MÚSICA<span></div>
     </div>
   </div>
 
@@ -80,33 +123,33 @@
 
   <!-- Galeria de Midias -->
   <div id="ancora_galeria" class="galeria_texto_div">
-     .
+    .
     <p class="galeria_texto">Galeria de Mídias</p>
   </div>
   <div class="container_galeria">
     <div id="imagem_atual" class="frame_principal"></div>
-      <div class="frames_secundarios">
-        <div id="container1">
-          <div onclick="frame_principal1()" id="c1f1"></div>
-          <div onclick="frame_principal2()" id="c1f2"></div>
-        </div>
+    <div class="frames_secundarios">
+      <div id="container1">
+        <div onclick="frame_principal1()" id="c1f1"></div>
+        <div onclick="frame_principal2()" id="c1f2"></div>
+      </div>
 
-        <div id="container2">
-          <div onclick="frame_principal3()" id="c2f1"></div>
-          <div onclick="frame_principal4()" id="c2f2"></div>
-        </div>
+      <div id="container2">
+        <div onclick="frame_principal3()" id="c2f1"></div>
+        <div onclick="frame_principal4()" id="c2f2"></div>
+      </div>
 
-        <div id="container3">
-          <div onclick="frame_principal5()" id="c3f1"></div>
-          <div onclick="frame_principal6()" id="c3f2"></div>
-        </div>
+      <div id="container3">
+        <div onclick="frame_principal5()" id="c3f1"></div>
+        <div onclick="frame_principal6()" id="c3f2"></div>
+      </div>
 
-        <div id="container4">
-          <div onclick="frame_principal7()" id="c4f1"></div>
-          <div onclick="frame_principal8()" id="c4f2"></div>
-        </div>
+      <div id="container4">
+        <div onclick="frame_principal7()" id="c4f1"></div>
+        <div onclick="frame_principal8()" id="c4f2"></div>
       </div>
     </div>
+  </div>
 
   <!-- Contagem Regressiva -->
   <div class="contador">
@@ -140,49 +183,53 @@
     </div>
   </div>
 
-    <!-- Divs modelo pop-ups com display none -->
-    <div id="div_login">
-  <div class="conteudo_login">
-    <!-- bloco direito -->
-    <div class="box">
-      <div id="btn_fechar_login" onclick="fechar_popup_login()">X</div>
-      <div class="container">
-        <img id="logo" src="./assets/Assinatura_cinza.png" />
-      </div>
-
-      <div class="container2">
-        <p id='texto_login'>Login</p>
-
-        <div>
-          <p class="texto_inputs">E-mail</p>
-          <input id="input_email_login" class="input_texto" type="text" placeholder="Exemplo@hotmail.com" />
+  <!-- Divs modelo pop-ups com display none -->
+  <div id="div_login">
+    <div class="conteudo_login">
+      <!-- bloco direito -->
+      <div class="box">
+        <div id="btn_fechar_login" onclick="fechar_popup_login()">X</div>
+        <div class="container">
+          <img id="logo" src="./assets/Assinatura_cinza.png" />
         </div>
 
-        <div class="senha">
-          <p class="texto_inputs">Senha</p>
-          <input id="input_senha_login" class="input_texto" type="password" placeholder="Inserir Senha" />
-        </div>
+        <div class="container2">
+          <p id='texto_login'>Login</p>
 
-        <div id="validacao">
-        <span id="span_validacao"></span>
-        </div>
+          <div>
+            <p class="texto_inputs">E-mail</p>
+            <input id="input_email_login" class="input_texto" type="text" placeholder="Exemplo@hotmail.com" />
+          </div>
 
-        <div class="LembrarUsuario_EsqueceuSenha">
-          <span id="span_lembrarUsuario"><input type="checkbox"> Lembrar Usuário</span>
-          <span id="span_esqueceuSenha"><a id="esqueceu_senha" href="#">Esqueceu sua senha?</a></span>
-        </div>
+          <div class="senha">
+            <p class="texto_inputs">Senha</p>
+            <input id="input_senha_login" class="input_texto" type="password" placeholder="Inserir Senha" />
+          </div>
 
-        <div>
-          <button id="btn_entrar" onclick="validLogin()">Entrar</button>
-        </div>
+          <div id="validacao">
+            <span id="span_validacao"></span>
+          </div>
 
-        <div class="div_cadastrar">
-          <p id="nao_possui_conta">Não possui uma conta ainda?</p> <a href="cadastro.html" id="a_cadastrar">Faça parte da jornada</a>
+          <div class="LembrarUsuario_EsqueceuSenha">
+            <span id="span_lembrarUsuario"><input type="checkbox"> Lembrar Usuário</span>
+            <span id="span_esqueceuSenha"><a id="esqueceu_senha" href="#">Esqueceu sua senha?</a></span>
+          </div>
+
+          <div>
+            <button id="btn_entrar" onclick="validLogin()">Entrar</button>
+          </div>
+
+          <div class="div_cadastrar">
+            <p id="nao_possui_conta">Não possui uma conta ainda?</p> <a href="cadastro.html" id="a_cadastrar">Faça parte
+              da jornada</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <button onclick="topFunction()" id="ScrollUp">↑</button>
 
 </body>
+
 </html>
