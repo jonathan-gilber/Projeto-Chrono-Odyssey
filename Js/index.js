@@ -56,7 +56,7 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// Scroll para o topo da página
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
@@ -70,8 +70,8 @@ function popup_login() {
 // Fecha pop-up de login
 function fechar_popup_login() {
   div_login.style.display = "none"
-  input_email_login.style.border = "none";
-  input_senha_login.style.border = "none";
+  input_email_login.style.border = "thin solid #646569";
+  input_senha_login.style.border = "thin solid #646569";
   span_validacao.innerHTML = "";
 }
 
@@ -135,9 +135,9 @@ function validLogin() {
   /* verifica se há algum input vazio */
   if (input_email_login.value == "" || input_senha_login.value == "") {
     span_validacao.innerHTML = "Por favor preencha todos os campos";
-    texto_login.style.marginTop = "30px";
     input_email_login.style.border = "thin solid #FF0000";
     input_senha_login.style.border = "thin solid #FF0000";
+    btn_fechar_login.style.marginTop = "-30px"
 
     /* marca a input email */
     if (input_email_login.value !== "") {
