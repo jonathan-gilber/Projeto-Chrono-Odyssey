@@ -11,42 +11,42 @@ function galeria_midia() {
 var b = true
 
 function toggle() {
-   b = !b;
+  b = !b;
 
-   if (b == false) {
+  if (b == false) {
     drop_menu.style.height = "350px"
     window.location.href = "#drop_menu"
     down_arrow_img.src = "./assets/up_arrow.png"
-   } else {
+  } else {
     drop_menu.style.height = "0px"
     down_arrow_img.src = "./assets/down_arrow.png"
-   }
   }
+}
 
-  // toggle para o botão play/pause
-  var c = true
-  var x = document.getElementById("myAudio"); 
+// toggle para o botão play/pause
+var c = true
+var x = document.getElementById("myAudio");
 
-  function toggleMusica() {
-    c = !c; console.log(c)
- 
-    if (c == false) {
-      texto_play.innerHTML = `PAUSAR MÚSICA`
-      play_img.src = "./assets/pause_icon.png"
-      play_img.style.width = "18px"
-      var x = document.getElementById("myAudio"); 
-      x.play(); 
-    } else {
-      texto_play.innerHTML = `TOCAR MÚSICA`
-      play_img.src = "./assets/play_icon.png"
-      play_img.style.width = "16px"
-      var x = document.getElementById("myAudio"); 
-      x.pause(); 
-    }
-   }
+function toggleMusica() {
+  c = !c; console.log(c)
+
+  if (c == false) {
+    texto_play.innerHTML = `PAUSAR MÚSICA`
+    play_img.src = "./assets/pause_icon.png"
+    play_img.style.width = "18px"
+    var x = document.getElementById("myAudio");
+    x.play();
+  } else {
+    texto_play.innerHTML = `TOCAR MÚSICA`
+    play_img.src = "./assets/play_icon.png"
+    play_img.style.width = "16px"
+    var x = document.getElementById("myAudio");
+    x.pause();
+  }
+}
 
 // Exibir botão de scroll up
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
@@ -72,12 +72,14 @@ function fechar_popup_login() {
   div_login.style.display = "none"
   input_email_login.style.border = "thin solid #646569";
   input_senha_login.style.border = "thin solid #646569";
+  input_email_login.innerHTML = "";
+  input_senha_login.innerHTML = "";
   span_validacao.innerHTML = "";
 }
 
 // Altera a imagem do frame principal na galeria de midias
 function frame_principal1() {
-imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chrono_odyssey_mmorpg-scaled.jpg')"
+  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chrono_odyssey_mmorpg-scaled.jpg')"
 }
 
 function frame_principal2() {
@@ -132,6 +134,8 @@ var x = setInterval(function () {
 
 // Validação tela de login
 function validLogin() {
+  emailVar = input_email_login.value
+  senhaVar = input_senha_login.value
   /* verifica se há algum input vazio */
   if (input_email_login.value == "" || input_senha_login.value == "") {
     span_validacao.innerHTML = "Por favor preencha todos os campos";
@@ -177,7 +181,55 @@ function validLogin() {
     } else {
 
       /* Confirma o login e abre a tela de monitoramento */
-      window.location.href = "index.html";
+      fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          emailServer: emailVar,
+          senhaServer: senhaVar
+        })
+      }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+          console.log(resposta);
+
+          resposta.json().then(json => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.ID_USUARIO = json.id;
+
+            setTimeout(function () {
+              window.location = "index.html";
+            }, 1000); // apenas para exibir o loading
+
+          });
+
+        } else {
+          console.log("Houve um erro ao tentar realizar o login!");
+          span_validacao.innerHTML = `Email ou senha inválidos`
+          input_senha_login.style.border = "thin solid grey"
+
+          resposta.text().then(texto => {
+            console.error(texto);
+            finalizarAguardar(texto);
+          });
+        }
+
+      }).catch(function (erro) {
+        console.log(erro);
+      })
+
+      return false;
+    }
+
+    function sumirMensagem() {
+      cardErro.style.display = "none"
     }
   }
 }
