@@ -7,6 +7,17 @@ function galeria_midia() {
   window.location.href = "#ancora_galeria";
 }
 
+window.onload = function() {
+  // sessionStorage.ID_USUARIO != undefined (= true)     (logado)
+  //sessionStorage.ID_USUARIO != undefined (= false)    (deslogado)
+  //sessionStore.clear
+  if (sessionStorage.ID_USUARIO != undefined) {
+    alert("logado")
+  } else {
+    alert("deslogado")
+  }
+}
+
 // Toggle para o botão drop-down
 var b = true
 
@@ -132,6 +143,48 @@ var x = setInterval(function () {
     days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 }, 1000);
 
+// Validar a sessão
+function validarSessao() {
+  // aguardar();
+
+  var email = sessionStorage.EMAIL_USUARIO;
+  var nome = sessionStorage.NOME_USUARIO;
+
+  var b_usuario = document.getElementById("b_usuario");
+
+  if (email != null && nome != null) {
+      // window.alert(`Seja bem-vindo, ${nome}!`);
+      b_usuario.innerHTML = nome;
+
+      // finalizarAguardar();
+  } else {
+      window.location = "../login.html";
+  }
+}
+
+function limparSessao() {
+  // aguardar();
+  sessionStorage.clear();
+  // finalizarAguardar();
+  window.location = "../login.html";
+}
+
+// carregamento (loading)
+function aguardar() {
+  var divAguardar = document.getElementById("div_aguardar");
+  divAguardar.style.display = "flex";
+}
+
+function finalizarAguardar(texto) {
+  var divAguardar = document.getElementById("div_aguardar");
+  divAguardar.style.display = "none";
+
+  var divErrosLogin = document.getElementById("div_erros_login");
+  if (texto) {
+      divErrosLogin.innerHTML = texto;
+  }
+}
+
 // Validação tela de login
 function validLogin() {
   emailVar = input_email_login.value
@@ -141,30 +194,29 @@ function validLogin() {
     span_validacao.innerHTML = "Por favor preencha todos os campos";
     input_email_login.style.border = "thin solid #FF0000";
     input_senha_login.style.border = "thin solid #FF0000";
-    btn_fechar_login.style.marginTop = "-30px"
 
     /* marca a input email */
     if (input_email_login.value !== "") {
-      input_email_login.style.border = "none";
+      input_email_login.style.border = "thin solid #646569";
     } else {
       input_email_login.style.border = "thin solid #FF0000";
     }
 
     /* marca a input senha */
     if (input_senha_login.value !== "") {
-      input_senha_login.style.border = "none";
+      input_senha_login.style.border = "thin solid #646569";
     } else {
       input_senha_login.style.border = "thin solid #FF0000";
     }
   } else {
     /* tira as marcações das inputs já preenchidas */
-    input_email_login.border = "none";
-    input_senha_login.style.border = "none";
+    input_email_login.border = "thin solid #646569";
+    input_senha_login.style.border = "thin solid #646569";
 
     /* Valida se o email possui mais de 10 caracteres */
     if (input_email_login.value.length < 10) {
       input_email_login.style.border = "thin solid #FF0000";
-      input_senha_login.style.border = "none";
+      input_senha_login.style.border = "thin solid #646569";
       span_validacao.innerHTML =
         "Email inválido, deve conter no mínimo 10 digitos";
     } else if (input_email_login.value.indexOf("@") == -1) {
@@ -176,11 +228,10 @@ function validLogin() {
 
       /* Valida se a senha tem mais de 8 caracteres */
       input_senha_login.style.border = "thin solid #FF0000";
-      input_email_login.style.border = "none";
+      input_email_login.style.border = "thin solid #646569";
       span_validacao.innerHTML = "Senha deve conter no mínimo 8 digitos";
     } else {
-
-      /* Confirma o login e abre a tela de monitoramento */
+      /* Confirma o login e recarrega a página */
       fetch("/usuarios/autenticar", {
         method: "POST",
         headers: {
@@ -201,19 +252,24 @@ function validLogin() {
             console.log(JSON.stringify(json));
 
             sessionStorage.EMAIL_USUARIO = json.email;
-            sessionStorage.NOME_USUARIO = json.nome;
-            sessionStorage.ID_USUARIO = json.id;
+            sessionStorage.NOME_USUARIO = json.Nome;
+            sessionStorage.SOBRENOME_USUARIO = json.Sobrenome;
+            sessionStorage.ID_USUARIO = json.idUsuario;
+
+            span_validacao.innerHTML = `Redirecionando...`
+            span_gif.style.display = "flex"
+            span_validacao.style.color = "white"
 
             setTimeout(function () {
               window.location = "index.html";
-            }, 1000); // apenas para exibir o loading
-
+            }, 2000); // apenas para exibir o loading
           });
 
         } else {
           console.log("Houve um erro ao tentar realizar o login!");
           span_validacao.innerHTML = `Email ou senha inválidos`
-          input_senha_login.style.border = "thin solid grey"
+          input_senha_login.style.border = "thin solid #646569";
+          input_email_login.style.border = "thin solid #646569";
 
           resposta.text().then(texto => {
             console.error(texto);

@@ -496,6 +496,32 @@ body {
     background-repeat: no-repeat;
     margin-left: 5px;
   }
+
+
+  /* enquete */
+  .enquete {
+    background-color: rgb(174, 174, 174);
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .enquete_container {
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #enquete_left {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    height: 100%;
+  }
+
   /* Contagem regressiva */
   .contador {
     background-color: #202020;
@@ -561,6 +587,8 @@ body {
 
 #validacao {
 display: flex;
+flex-direction: column;
+align-items: center;
 justify-content: center;
 }
 
@@ -570,6 +598,13 @@ justify-content: center;
   margin-bottom: -10px;
   font-size: 14px;
   margin-top: 10px;
+}
+
+#span_gif {
+  width: 28px;
+  display: none;
+  margin-top: 14px;
+  margin-bottom: -14px;
 }
 
 .box {
@@ -731,7 +766,7 @@ align-items: center;
   border-radius: 20px;
   align-self: flex-end;
   margin-right: -8px;
-  margin-top: -40px;
-  margin-bottom: 40px;
+  margin-top: -430px;
   cursor: pointer;
+  position: fixed;
 }
