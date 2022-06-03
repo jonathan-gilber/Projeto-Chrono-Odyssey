@@ -60,7 +60,8 @@
         <img id="down_arrow_img" src="./Assets/down_arrow.png" />
       </button>
       <button id="btn_midia" onclick="galeria_midia()">MÍDIA</button>
-      <button id="btn_historia" onclick="fechar_drop_menu()">HISTÓRIA</button>
+      <button id="btn_historia">HISTÓRIA</button>
+      <button id="btn_historia" onclick="ancoraEnquete()">ENQUETE</button>
     </div>
 
     <div id="navbar_blocoDir">
@@ -125,43 +126,43 @@
 
   <!-- Galeria de Midias -->
   <div id="ancora_galeria" class="galeria_texto_div">
-    .
     <p class="galeria_texto">Galeria de Mídias</p>
   </div>
   <div class="container_galeria">
     <div id="imagem_atual" class="frame_principal"></div>
     <div class="frames_secundarios">
       <div id="container1">
-        <div onclick="frame_principal1()" id="c1f1"></div>
-        <div onclick="frame_principal2()" id="c1f2"></div>
+        <div onclick="frame_principal(id)" id="c1f1"></div>
+        <div onclick="frame_principal(id)" id="c1f2"></div>
       </div>
 
       <div id="container2">
-        <div onclick="frame_principal3()" id="c2f1"></div>
-        <div onclick="frame_principal4()" id="c2f2"></div>
+        <div onclick="frame_principal(id)" id="c2f1"></div>
+        <div onclick="frame_principal(id)" id="c2f2"></div>
       </div>
 
       <div id="container3">
-        <div onclick="frame_principal5()" id="c3f1"></div>
-        <div onclick="frame_principal6()" id="c3f2"></div>
+        <div onclick="frame_principal(id)" id="c3f1"></div>
+        <div onclick="frame_principal(id)" id="c3f2"></div>
       </div>
 
       <div id="container4">
-        <div onclick="frame_principal7()" id="c4f1"></div>
-        <div onclick="frame_principal8()" id="c4f2"></div>
+        <div onclick="frame_principal(id)" id="c4f1"></div>
+        <div onclick="frame_principal(id)" id="c4f2"></div>
       </div>
     </div>
   </div>
 
-    <!-- Enquete -->
-  <div class="enquete">
+  <!-- Enquete -->
+  <div id="ancora_enquete" class="enquete">
     <div class="enquete_container">
       <div id="enquete_left">
-        <span>O que mais desperta seu interesse em Chrono Odyssey?</span>
-        <span>Gráficos</span>
-        <span>Jogabilidade</span>
-        <span>História</span>
-        <span>Design</span>
+        <span class="enquete_titulo">O que mais desperta seu interesse em Chrono Odyssey?</span>
+        <button id="voto_1" class="btn_enquete" onclick="votoEnquete(id)">Gráficos</button>
+        <button id="voto_2" class="btn_enquete" onclick="votoEnquete(id)">Jogabilidade</button>
+        <button id="voto_3" class="btn_enquete" onclick="votoEnquete(id)">História</button>
+        <button id="voto_4" class="btn_enquete" onclick="votoEnquete(id)">Design</button>
+        <button class="enquete_votar">Votar</button>
       </div>
     </div>
   </div>

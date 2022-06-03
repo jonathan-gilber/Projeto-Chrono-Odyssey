@@ -7,6 +7,10 @@ function galeria_midia() {
   window.location.href = "#ancora_galeria";
 }
 
+function ancoraEnquete() {
+  window.location.href = "#ancora_enquete";
+}
+
 window.onload = function() {
   if (sessionStorage.ID_USUARIO != undefined) {
     nome_session.innerHTML = sessionStorage.NOME_USUARIO.toUpperCase()
@@ -94,36 +98,48 @@ function fechar_popup_login() {
 }
 
 // Altera a imagem do frame principal na galeria de midias
-function frame_principal1() {
-  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chrono_odyssey_mmorpg-scaled.jpg')"
+function frame_principal(id) {
+  if (id == "c1f1") {
+    imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chrono_odyssey_mmorpg-scaled.jpg')"
+  } else if (id == "c1f2") {
+    imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_west-scaled.jpg')"
+  } else if (id == "c2f1") {
+    imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_cuando_sale-scaled.jpg')"
+  } else if (id == "c2f2") {
+    imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_ps5-scaled.jpg')"
+  } else if (id == "c3f1") {
+    imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_como_jugar-scaled.jpg')"
+  } else if (id == "c3f2") {
+    imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_gremios-scaled.jpg')"
+  } else if (id == "c4f1") {
+    imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_pvp-1-scaled.jpg')"
+  } else if (id == "c4f2") {
+    imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_rvr-scaled.jpg')"
+  }
 }
 
-function frame_principal2() {
-  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_west-scaled.jpg')"
-}
-
-function frame_principal3() {
-  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_cuando_sale-scaled.jpg')"
-}
-
-function frame_principal4() {
-  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_ps5-scaled.jpg')"
-}
-
-function frame_principal5() {
-  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_como_jugar-scaled.jpg')"
-}
-
-function frame_principal6() {
-  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_gremios-scaled.jpg')"
-}
-
-function frame_principal7() {
-  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_pvp-1-scaled.jpg')"
-}
-
-function frame_principal8() {
-  imagem_atual.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_rvr-scaled.jpg')"
+function votoEnquete(id) {
+  if (id == "voto_1") {
+    voto_1.style.backgroundColor = "grey"
+    voto_2.style.backgroundColor = "#0a0a0a00"
+    voto_3.style.backgroundColor = "#0a0a0a00"
+    voto_4.style.backgroundColor = "#0a0a0a00"
+  } else if (id == "voto_2") {
+    voto_1.style.backgroundColor = "#0a0a0a00"
+    voto_2.style.backgroundColor = "grey"
+    voto_3.style.backgroundColor = "#0a0a0a00"
+    voto_4.style.backgroundColor = "#0a0a0a00"
+  } else if (id == "voto_3") {
+    voto_1.style.backgroundColor = "#0a0a0a00"
+    voto_2.style.backgroundColor = "#0a0a0a00"
+    voto_3.style.backgroundColor = "grey"
+    voto_4.style.backgroundColor = "#0a0a0a00"
+  } else if (id == "voto_4") {
+    voto_1.style.backgroundColor = "#0a0a0a00"
+    voto_2.style.backgroundColor = "#0a0a0a00"
+    voto_3.style.backgroundColor = "#0a0a0a00"
+    voto_4.style.backgroundColor = "grey"
+  }
 }
 
 // Define a data que queremos alcançar
