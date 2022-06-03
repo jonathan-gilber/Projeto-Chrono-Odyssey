@@ -8,14 +8,19 @@ function galeria_midia() {
 }
 
 window.onload = function() {
-  // sessionStorage.ID_USUARIO != undefined (= true)     (logado)
-  //sessionStorage.ID_USUARIO != undefined (= false)    (deslogado)
-  //sessionStore.clear
   if (sessionStorage.ID_USUARIO != undefined) {
-    alert("logado")
+    nome_session.innerHTML = sessionStorage.NOME_USUARIO.toUpperCase()
+    btn_sair.style.display = "block"
+    btn_iniciar.style.display = "none"
+    btn_juntar.style.display = "none"
   } else {
-    alert("deslogado")
+    btn_sair.style.display = "none"
   }
+}
+
+function deslogar() {
+  sessionStorage.clear()
+  window.location = "index.html";
 }
 
 // Toggle para o botão drop-down

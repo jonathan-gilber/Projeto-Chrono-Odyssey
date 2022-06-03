@@ -79,9 +79,9 @@ function validCadastro() {
         "Email inválido, deve conter no mínimo 10 digitos";
     } else if (input_nome.value.length < 6) {
 
-      /* Valida se o nome possui mais de 6 caracteres */
+      /* Valida se o nome possui mais de 3 caracteres */
       input_nome.style.border = "thin solid #FF0000";
-      span_validacao.innerHTML = "Nome deve conter no mínimo 6 digitos";
+      span_validacao.innerHTML = "Nome deve conter no mínimo 3 digitos";
     } else if (input_sobrenome.value.length < 3) {
 
       /* Valida se a input sobrenome possui mais de 3 caracteres */
@@ -96,6 +96,7 @@ function validCadastro() {
 
       /* Valida se a senha tem mais de 8 caracteres */
       input_senha.style.border = "thin solid #FF0000";
+      input_repetir_senha.style.border = "thin solid #FF0000";
       span_validacao.innerHTML = "Senha deve conter no mínimo 8 digitos";
     } else if (input_senha.value !== input_repetir_senha.value) {
 
