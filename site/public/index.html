@@ -54,18 +54,20 @@
 
   <!-- Navbar -->
   <div id="id_navbar" class="overlay_navbar">
+    <!-- Bloco esquerdo -->
     <div id="navbar_blocoEsq">
       <img id="assinatura" src="./assets/Assinatura.png" />
       <button id="btn_down_arrow" onclick="toggle()">
         <img id="down_arrow_img" src="./Assets/down_arrow.png" />
       </button>
-      <button id="btn_midia" onclick="galeria_midia()">MÍDIA</button>
-      <button id="btn_historia">HISTÓRIA</button>
-      <button id="btn_historia" onclick="ancoraEnquete()">ENQUETE</button>
+      <button id="btn_historia" class="btn_navbar" onclick="ancoraConteudo()">HISTÓRIA</button>
+      <button class="btn_navbar" onclick="galeria_midia()">MÍDIA</button>
+      <button class="btn_navbar" onclick="ancoraEnquete()">ENQUETE</button>
     </div>
 
+    <!-- Bloco direito -->
     <div id="navbar_blocoDir">
-      <button id="btn_iniciar" onclick="popup_login()">INICIAR SESSÃO</button>
+      <button id="btn_iniciar" class="btn_navbar" onclick="popup_login()">INICIAR SESSÃO</button>
       <button id="btn_juntar" onclick="window.location.href='cadastro.html'">JUNTAR-SE</button>
       <span id="nome_session"></span>
       <button onclick="deslogar()" id="btn_sair">SAIR →</button>
@@ -78,13 +80,12 @@
       <source src="./Assets/video1_background.mp4" type="video/mp4" />
     </video>
 
-    <!-- conteúdo hero -->
     <div class="overlay_container">
       <div class="overlay_conteudo">
         <div id="logo_container">
           <img id="logo_CO" src="./Assets/logo_chrono_odyssey.png">
           <span id="texto_logo">Um mundo onde tudo pode acontecer</span>
-          <button id="btn_saiba_mais" onclick="saibaMais()">SAIBA MAIS</button>
+          <button id="btn_saiba_mais" onclick="ancoraConteudo()">SAIBA MAIS</button>
         </div>
       </div>
 
@@ -94,39 +95,35 @@
 
       <div onclick="toggleMusica()" id="btn_play"><img id="play_img" src="./Assets/play_icon.png"><span
           id="texto_play">TOCAR
-          MÚSICA<span></div>
+          MÚSICA<span>
+      </div>
     </div>
   </div>
 
-  <!-- Conteúdo principal -->
-  <div id="ancora_conteudo" class="conteudo">
-    <div class="conteudo_container">
-      <div class="bloco1">
-        <div class="bloco1_container">
-          <p class="bloco1_container_texto_titulo">Explore lugares épicos</p>
-          <p class="bloco1_container_texto">De Cavernas Profundas a Castelos Imponentes, Lute Em Lugares Incríveis e
-            Conquiste Vitórias Lendárias! Viaje Por Estradas Repletas de Camponeses, Caravanas e Comitivas de Nobres -
-            Mas Também Bandidos, Mercenários e Monstros Errantes! Explore Templos Escondidos Nas Profundezas de
-            Florestas, Lar de Druidas - Ou Covil de Dragões! Embrenhe-Se Em Cavernas Repletas de Armadilhas, Onde
-            Esqueletos de Aventureiros Misturam-Se a Tesouros Ancestrais! Defenda Um Castelo de Hordas Invasores, Ou
-            Ataque-O e Conquiste-O para Sua Própria Glória!</p>
-        </div>
+  <!-- conteúdo principal 2 -->
+  <div  class="conteudo_principal">
+    <div id="conteudo_container">
+      <div id="conteudo_overlay"></div>
+      <div id="conteudo1" class="conteudo_container2">
+        <p class="conteudo_titulo">Explore lugares épicos</p>
+        <p class="conteudo_corpo">Explore templos escondidos nas profundezas de
+          Florestas, lar de druidas - ou covil de dragões! Embrenhe-se em cavernas repletas de armadilhas, onde
+          Esqueletos de aventureiros misturam-se a tesouros ancestrais! Defenda um castelo de hordas invasores, ou
+          Ataque-o e conquiste-o para sua própria glória!</p>
       </div>
 
-      <div class="bloco2">
-        <div class="bloco2_container">
-          <p class="bloco2_container_texto_titulo">Visuais Deslumbrantes</p>
-          <p class="bloco2_container_texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum excepturi
-            explicabo cumque, dolorem sit amet aliquid sint quia dolorum harum itaque eveniet officia provident quas
-            delectus exercitationem obcaecati quasi iure.</p>
-        </div>
+      <div id="conteudo2" class="conteudo_container3">
+        <p class="conteudo_titulo">Lorem ipsum dolor sit amet</p>
+        <p class="conteudo_corpo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam odio facilis tempore earum nisi quo suscipit, ad non sint iusto deserunt, quam quaerat labore delectus amet iste consequatur, exercitationem ab.</p>
       </div>
     </div>
   </div>
 
   <!-- Galeria de Midias -->
-  <div id="ancora_galeria" class="galeria_texto_div">
-    <p class="galeria_texto">Galeria de Mídias</p>
+  <div class="galeria_texto_div">
+    <span id="ancora_galeria">.</span>
+    <p class="galeria_texto">CONTEÚDO EXCLUSIVO</p>
+    <p class="galeria_texto2">ASSISTA, VEJA, SINTA</p>
   </div>
   <div class="container_galeria">
     <div id="imagem_atual" class="frame_principal"></div>
@@ -199,10 +196,9 @@
     </div>
   </div>
 
-  <!-- Divs modelo pop-ups com display none -->
+  <!-- Tela de login (display none) -->
   <div id="div_login">
     <div class="conteudo_login">
-      <!-- bloco direito -->
       <div class="box">
         <div id="btn_fechar_login" onclick="fechar_popup_login()">X</div>
 

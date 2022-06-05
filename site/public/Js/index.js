@@ -1,6 +1,6 @@
 // Âncora até determinado elemento da página
-function saibaMais() {
-  window.location.href = "#ancora_conteudo";
+function ancoraConteudo() {
+  window.location.href = "#conteudo1";
 }
 
 function galeria_midia() {
@@ -11,6 +11,7 @@ function ancoraEnquete() {
   window.location.href = "#ancora_enquete";
 }
 
+// Verifica se o usuário está logado e exibe botão de logout caso esteja
 window.onload = function() {
   if (sessionStorage.ID_USUARIO != undefined) {
     nome_session.innerHTML = sessionStorage.NOME_USUARIO.toUpperCase()
@@ -22,12 +23,13 @@ window.onload = function() {
   }
 }
 
+// Limpa o sessionStorage (logout)
 function deslogar() {
   sessionStorage.clear()
   window.location = "index.html";
 }
 
-// Toggle para o botão drop-down
+// Toggle para o botão menu superior
 var b = true
 
 function toggle() {
@@ -69,32 +71,54 @@ function toggleMusica() {
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-    ScrollUp.style.display = "block";
+  if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+    conteudo_overlay.style.backgroundColor = "transparent"
+    conteudo_overlay.style.zIndex = "-1"
   } else {
-    ScrollUp.style.display = "none";
+    conteudo_overlay.style.backgroundColor = "black"
+    conteudo_overlay.style.zIndex = "1"
+  }
+
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    ScrollUp.style.display = "block"
+  } else {
+    ScrollUp.style.display = "none"
+  }
+
+  if (document.body.scrollTop > 1300 || document.documentElement.scrollTop > 1300) {
+    conteudo1.style.opacity = "0"
+    conteudo2.style.zIndex = "0"
+    conteudo2.style.opacity = "1"
+    conteudo2.style.zIndex = "1"
+    conteudo_container.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_rvr-scaled.jpg')";
+  } else {
+    conteudo1.style.opacity = "1"
+    conteudo1.style.zIndex = "1"
+    conteudo2.style.opacity = "0"
+    conteudo2.style.zIndex = "0"
+    conteudo_container.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_gremios-scaled.jpg')";
   }
 }
 
 // Scroll para o topo da página
 function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
 }
 
-// Abre pop-up de login
+// Abre tela de login
 function popup_login() {
   div_login.style.display = "flex"
 }
 
-// Fecha pop-up de login
+// Fecha tela de login
 function fechar_popup_login() {
   div_login.style.display = "none"
-  input_email_login.style.border = "thin solid #646569";
-  input_senha_login.style.border = "thin solid #646569";
-  input_email_login.innerHTML = "";
-  input_senha_login.innerHTML = "";
-  span_validacao.innerHTML = "";
+  input_email_login.style.border = "thin solid #646569"
+  input_senha_login.style.border = "thin solid #646569"
+  input_email_login.innerHTML = ""
+  input_senha_login.innerHTML = ""
+  span_validacao.innerHTML = ""
 }
 
 // Altera a imagem do frame principal na galeria de midias
@@ -289,8 +313,8 @@ function validLogin() {
         } else {
           console.log("Houve um erro ao tentar realizar o login!");
           span_validacao.innerHTML = `Email ou senha inválidos`
-          input_senha_login.style.border = "thin solid #646569";
-          input_email_login.style.border = "thin solid #646569";
+          input_senha_login.style.border = "thin solid red";
+          input_email_login.style.border = "thin solid red";
 
           resposta.text().then(texto => {
             console.error(texto);
