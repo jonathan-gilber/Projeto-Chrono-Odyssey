@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./Css/estilo.css" />
   <link rel="stylesheet" href="./Css/index.css">
   <script src="./Js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="shortcut icon" href="./Assets/favicon_chrono_odyssey.png" type="image/x-icon">
 </head>
 
@@ -19,7 +20,8 @@
       <div class="box1">
         <div class="conjunto1"></div>
         <div class="conjunto2">
-          <p>Site elaborado e desenvolvido por Jonathan Gilber durante o projeto de avaliação individual SPTech, usando técnicas e práticas ensinadas nas matérias de algoritmo e pesquisa e inovação.
+          <p>Site elaborado e desenvolvido por Jonathan Gilber durante o projeto de avaliação individual SPTech, usando
+            técnicas e práticas ensinadas ao longo do primeiro semestre de ADS.
           </p>
         </div>
       </div>
@@ -36,7 +38,8 @@
         <div class="conjunto1"></div>
         <div class="conjunto2">
           <p id="p_titulo">Shxp Life</p>
-          <p>A Shxp Life é uma loja de roupas e acessórios inaugurada em 2019, pensada e desenvolvida para os amantes de stret wear, skate e esportes em gerais.
+          <p>A Shxp Life é uma loja de roupas e acessórios inaugurada em 2019, pensada e desenvolvida para os amantes de
+            streetwear, skate e esportes em geral.
           </p>
         </div>
       </div>
@@ -45,7 +48,8 @@
         <div class="conjunto1"></div>
         <div class="conjunto2">
           <p id="p_titulo">Sunbean</p>
-          <p>A sunbean é uma empresa de tecnologia e soluções agropecuárias, que visa implementar sistemas para capturar e gerenciar os dados de umidade e temperatura de suas plantações.
+          <p>A sunbean é uma empresa de tecnologia e soluções agropecuárias, que visa implementar sistemas para capturar
+            e gerenciar os dados de umidade e temperatura de suas plantações.
           </p>
         </div>
       </div>
@@ -101,7 +105,7 @@
   </div>
 
   <!-- conteúdo principal 2 -->
-  <div  class="conteudo_principal">
+  <div class="conteudo_principal">
     <div id="conteudo_container">
       <div id="conteudo_overlay"></div>
       <div id="conteudo1" class="conteudo_container2">
@@ -114,7 +118,9 @@
 
       <div id="conteudo2" class="conteudo_container3">
         <p class="conteudo_titulo">Lorem ipsum dolor sit amet</p>
-        <p class="conteudo_corpo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam odio facilis tempore earum nisi quo suscipit, ad non sint iusto deserunt, quam quaerat labore delectus amet iste consequatur, exercitationem ab.</p>
+        <p class="conteudo_corpo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam odio facilis tempore
+          earum nisi quo suscipit, ad non sint iusto deserunt, quam quaerat labore delectus amet iste consequatur,
+          exercitationem ab.</p>
       </div>
     </div>
   </div>
@@ -152,14 +158,65 @@
 
   <!-- Enquete -->
   <div id="ancora_enquete" class="enquete">
-    <div class="enquete_container">
-      <div id="enquete_left">
-        <span class="enquete_titulo">O que mais desperta seu interesse em Chrono Odyssey?</span>
-        <button id="voto_1" class="btn_enquete" onclick="votoEnquete(id)">Gráficos</button>
-        <button id="voto_2" class="btn_enquete" onclick="votoEnquete(id)">Jogabilidade</button>
-        <button id="voto_3" class="btn_enquete" onclick="votoEnquete(id)">História</button>
-        <button id="voto_4" class="btn_enquete" onclick="votoEnquete(id)">Design</button>
-        <button class="enquete_votar">Votar</button>
+    <!-- bloco esquerdo -->
+    <div class="leftbox">
+      <div class="container">
+        <img id="assinatura_monocromatica" src="./assets/Assinatura.png" />
+      </div>
+      <div class="container2"></div>
+      <div class="container3">
+        <p id="texto_left">Tem um momento?</p>
+        <p id="texto_left2">Ajude-nos com essa pesquisa</p>
+      </div>
+    </div>
+
+    <!-- bloco direito -->
+    <div class="rightbox">
+      <div class="rightbox_container">
+        <div id="votacao">
+          <div class="rb_container1">
+            <p class="texto_enquete">ENQUETE</p>
+            <p class="texto_enquete2">O QUE MAIS TE ATRAI EM CHRONO ODYSSEY?</p>
+          </div>
+
+          <div class="rb_container2">
+            <form>
+              <label for="form_graficos">
+                <input type="radio" id="form_graficos" name="tela1" value="1">
+                <span>Gráficos</span>
+              </label><br>
+              
+              <label for="form_jogabilidade">
+                <input type="radio" id="form_jogabilidade" name="tela1" value="2">
+                <span>Jogabilidade</span>
+              </label><br>
+
+              <label for="form_historia">
+                <input type="radio" id="form_historia" name="tela1" value="3">
+                <span>História</span>
+              </label><br>
+
+              <label for="form_combate">
+                <input type="radio" id="form_combate" name="tela1" value="4">
+                <span>Combate</span>
+              </label>
+            </form>
+          </div>
+
+          <div class="rb_container3">
+            <button class="btn_votar" onclick="votar()">Votar⠀✓</button>
+            <span id="span_voto"></span>
+          </div>
+        </div>
+
+        <!-- Chart JS -->
+        <div id="div_chartjs">
+          <div class="chart_container">
+          <p id="texto_chart1"></p>
+          <p id="texto_chart2"></p>
+          </div>
+          <canvas id="myChart"></canvas>
+        </div>
       </div>
     </div>
   </div>
@@ -168,16 +225,21 @@
   <div class="contador">
     <p id="contagem_texto">Lançamento em</p>
     <p id="demo"></p>
-    <button id="btn_adquira">ADQUIRA JÁ</button>
+    <a href="https://store.steampowered.com/?l=portuguese" target="_blank"><button id="btn_adquira">ADQUIRA
+        JÁ</button></a>
   </div>
 
   <!-- Footer -->
   <div class="footer">
     <div class="container1">
-      <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Twitter.png" /></a>
-      <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Facebook.png" /></a>
-      <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Instagram.png" /></a>
-      <a target="_blank" href="#" class="a_icones"><img class="icones" src="./Assets/Linkedin.png" /></a>
+      <a target="_blank" href="https://twitter.com" class="a_icones"><img class="icones"
+          src="./Assets/Twitter.png" /></a>
+      <a target="_blank" href="https://facebook.com" class="a_icones"><img class="icones"
+          src="./Assets/Facebook.png" /></a>
+      <a target="_blank" href="https://instagram.com" class="a_icones"><img class="icones"
+          src="./Assets/Instagram.png" /></a>
+      <a target="_blank" href="https://linkedin.com" class="a_icones"><img class="icones"
+          src="./Assets/Linkedin.png" /></a>
     </div>
 
     <div class="container2">
@@ -204,8 +266,8 @@
 
         <div class="box_container">
           <div id="login_center">
-          <p id='texto_bemvindo'>BEM VINDO(A) DE VOLTA</p>
-          <p id='texto_login'>Entrar na sua conta</p>
+            <p id='texto_bemvindo'>BEM VINDO(A) DE VOLTA</p>
+            <p id='texto_login'>Entrar na sua conta</p>
           </div>
 
           <div>
@@ -245,3 +307,33 @@
 
 </body>
 </html>
+
+<script>
+  const labels = [
+    'Gráfico',
+    'Jogabilidade',
+    'História',
+    'Combate',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'O que mais te atrai em Chrono Odyssey?',
+      backgroundColor: '#6c8a99',
+      borderColor: '#202020',
+      data: [21, 13, 9, 15],
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>

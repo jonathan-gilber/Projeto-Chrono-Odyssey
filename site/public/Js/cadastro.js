@@ -77,7 +77,7 @@ function validCadastro() {
       input_email.style.border = "thin solid #FF0000";
       span_validacao.innerHTML =
         "Email inválido, deve conter no mínimo 10 digitos";
-    } else if (input_nome.value.length < 6) {
+    } else if (input_nome.value.length < 3) {
 
       /* Valida se o nome possui mais de 3 caracteres */
       input_nome.style.border = "thin solid #FF0000";
@@ -136,7 +136,7 @@ function validCadastro() {
           sobrenomeServer: sobrenomeVar,
           telServer: telVar,
           emailServer: emailVar,
-          senhaServer: senhaVar
+          senhaServer: senhaVar,
         })
       })
     }

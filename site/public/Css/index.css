@@ -497,84 +497,238 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin-left: 5px;
-  }
+    }
 
+/* Enquete */
+.enquete {
+  height: 108vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(33, 124, 199, 0),
+    #c4c4c4,
+    #c9c9c9
+  );
+  justify-content: center;
+}
 
-  /* enquete */
-  .enquete {
-    background-color: rgb(174, 174, 174);
-    height: 400px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.leftbox {
+  background-color: #6c8a99;
+  height: 500px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-image: url(https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_como_jugar-scaled.jpg);
+  background-position: 45%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  .enquete_container {
-    width: auto;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-  }
+#assinatura_monocromatica {
+  height: 90%;
+  margin-left: 10px;
+  margin-top: 6px;
+}
 
-  .btn_enquete {
-    border: 0;
-    background-color: #0a0a0a00;
-    border-radius: 5px;
-    padding: 10px 12px 10px 16px;
-    cursor: pointer;
-    margin-top: 6px;
-    text-align: left;
-    color: #383838;
-    text-decoration: none;
-  }
-  
-  .btn_enquete:hover {
-    background-color: rgb(219, 219, 219);
-  }
+#img_cadastro {
+  margin-top: 30px;
+  height: 80%;
+}
 
-  .enquete_titulo {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 18px;
-    color: #202020;
-    margin-bottom: 15px;
-  }
+.leftbox .container {
+  width: 100%;
+  height: 10%;
+}
 
-  #enquete_left {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: white;
-    border-radius: 8px;
-    padding: 18px;
-    justify-content: center;
-  }
+.leftbox .container2 {
+  width: 100%;
+  height: 55%;
+}
 
-  .enquete_votar {
-    border: 0;
-    background-color: #202020;
-    border-radius: 5px;
-    padding: 10px 12px 10px 16px;
-    cursor: pointer;
-    margin-top: 6px;
-    text-align: left;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 30px;
-    height: 45px;
-  }
+.leftbox .container3 {
+  width: 80%;
+  height: 35%;
+  display: flex;
+  color: white;
+  background-image: radial-gradient(
+    black,
+    rgb(0, 0, 0, 0.5),
+    rgba(255, 0, 0, 0),
+    rgba(0, 0, 255, 0)
+  );
+  display: flex;
+  flex-direction: column;
+}
 
-  .enquete_votar:hover {
-    background-color: #ecba23;
-    color: white;
-  }
+#texto_left {
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  margin: 32px 0 0 0;
+}
 
+#texto_left2 {
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  margin: 0;
+}
+
+/* bloco de conteúdo direito */
+.rightbox {
+  background-color: rgb(255, 255, 255);
+  height: 500px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.rightbox_container {
+  width: 90%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rb_container1 {
+  width: 100%;
+  height: 20%;
+}
+
+.rb_container2 {
+  width: 100%;
+  height: 60%;
+  display: block;
+  border: 1px solid rgba(255, 0, 0, 0);
+}
+
+.rb_container3 {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.texto_enquete {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  margin: 0;
+}
+
+.texto_enquete2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 28px;
+  margin: 0;
+  font-weight: 500;
+  color: #333333;
+}
+
+#votacao {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+#votacao form {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333333;
+  height: 100%;
+  width: 100%;
+  display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+  margin-top: 30px;
+}
+
+#votacao input {
+  align-self: center;
+  margin-left: 20px;
+}
+
+#votacao label {
+  border-radius: 5px;
+  background: linear-gradient(to right, rgb(214, 214, 214), rgb(247, 247, 247));
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
+  cursor: pointer;
+}
+
+#votacao span {
+  margin-left: 10px;
+}
+
+input[type='radio'] { 
+  transform: scale(1.5); 
+}
+
+#votacao label:hover {
+  background: linear-gradient(to right, rgb(182, 182, 182), rgb(247, 247, 247));
+}
+
+.btn_votar {
+  width: 200px;
+  height: 50px;
+  border: 0;
+  text-decoration: none;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #202020d0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn_votar:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+#div_chartjs {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#texto_chart1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 28px;
+  margin: 0;
+}
+
+#texto_chart2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.chart_container {
+  width: 100%;
+  height: 20%;
+}
   /* Contagem regressiva */
   .contador {
     background-color: #202020;

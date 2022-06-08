@@ -142,30 +142,6 @@ function frame_principal(id) {
   }
 }
 
-function votoEnquete(id) {
-  if (id == "voto_1") {
-    voto_1.style.backgroundColor = "grey"
-    voto_2.style.backgroundColor = "#0a0a0a00"
-    voto_3.style.backgroundColor = "#0a0a0a00"
-    voto_4.style.backgroundColor = "#0a0a0a00"
-  } else if (id == "voto_2") {
-    voto_1.style.backgroundColor = "#0a0a0a00"
-    voto_2.style.backgroundColor = "grey"
-    voto_3.style.backgroundColor = "#0a0a0a00"
-    voto_4.style.backgroundColor = "#0a0a0a00"
-  } else if (id == "voto_3") {
-    voto_1.style.backgroundColor = "#0a0a0a00"
-    voto_2.style.backgroundColor = "#0a0a0a00"
-    voto_3.style.backgroundColor = "grey"
-    voto_4.style.backgroundColor = "#0a0a0a00"
-  } else if (id == "voto_4") {
-    voto_1.style.backgroundColor = "#0a0a0a00"
-    voto_2.style.backgroundColor = "#0a0a0a00"
-    voto_3.style.backgroundColor = "#0a0a0a00"
-    voto_4.style.backgroundColor = "grey"
-  }
-}
-
 // Define a data que queremos alcançar
 var countDownDate = new Date("Jul 5, 2022 15:37:25").getTime();
 
@@ -297,8 +273,8 @@ function validLogin() {
             console.log(JSON.stringify(json));
 
             sessionStorage.EMAIL_USUARIO = json.email;
-            sessionStorage.NOME_USUARIO = json.Nome;
-            sessionStorage.SOBRENOME_USUARIO = json.Sobrenome;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.SOBRENOME_USUARIO = json.sobrenome;
             sessionStorage.ID_USUARIO = json.idUsuario;
 
             span_validacao.innerHTML = `Redirecionando...`
@@ -333,4 +309,40 @@ function validLogin() {
       cardErro.style.display = "none"
     }
   }
+}
+
+function votar() {
+ var votoVar = document.querySelector('input[name="tela1"]:checked').value;
+ var idVar = sessionStorage.ID_USUARIO
+ var opcaoVotoVar = 0
+
+ if (votoVar == 1) {
+  opcaoVotoVar = "Gráficos"
+ } else if (votoVar == 2) {
+  opcaoVotoVar = "Jogabilidade"
+ } else if (votoVar == 3) {
+  opcaoVotoVar = "História"
+} else if (votoVar == 4) {
+  opcaoVotoVar = "Combate"
+}
+
+  votacao.style.display = "none"
+  div_chartjs.style.display = "flex"
+
+  texto_chart1.innerHTML = `Muito obrigado, ${sessionStorage.NOME_USUARIO}`
+  texto_chart2.innerHTML = `Seu voto vai para: ${opcaoVotoVar}`
+
+  fetch("/usuarios/votacao", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      // crie um atributo que recebe o valor recuperado aqui
+      // Agora vá para o arquivo routes/usuario.js
+      votoServer: votoVar,
+      idServer: idVar,
+      opcaoVotoServer: opcaoVotoVar
+    })
+  })
 }

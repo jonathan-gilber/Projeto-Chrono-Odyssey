@@ -100,9 +100,40 @@ function cadastrar(req, res) {
     }
 }
 
+function votacao(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var voto = req.body.votoServer;
+    var idUsuario = req.body.idServer
+    var opcaoVoto = req.body.opcaoVotoServer
+
+    // Faça as validações dos valores
+    if (voto == undefined) {
+        res.status(400).send("Seu voto está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.votacao(voto, idUsuario, opcaoVoto)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o vot! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    votacao,
 }
