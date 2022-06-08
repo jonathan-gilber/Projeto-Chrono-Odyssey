@@ -1,6 +1,6 @@
 // Âncora até determinado elemento da página
 function ancoraConteudo() {
-  window.location.href = "#conteudo1";
+  window.location.href = "#conteudo_overlay";
 }
 
 function galeria_midia() {
@@ -11,15 +11,22 @@ function ancoraEnquete() {
   window.location.href = "#ancora_enquete";
 }
 
-// Verifica se o usuário está logado e exibe botão de logout caso esteja
+// habilita enquete e botão de logout para usuários logados
 window.onload = function() {
   if (sessionStorage.ID_USUARIO != undefined) {
     nome_session.innerHTML = sessionStorage.NOME_USUARIO.toUpperCase()
     btn_sair.style.display = "block"
     btn_iniciar.style.display = "none"
     btn_juntar.style.display = "none"
+    bloqueio_enquete.style.display = "none"
+
+    bloqueio_leftbox.style.filter = "none"
+    bloqueio_rightbox.style.filter = "none"
   } else {
     btn_sair.style.display = "none"
+    bloqueio_enquete.style.display = "flex"
+    bloqueio_leftbox.style.filter = "blur(8px)"
+    bloqueio_rightbox.style.filter = "blur(8px)"
   }
 }
 
@@ -67,37 +74,32 @@ function toggleMusica() {
   }
 }
 
-// Exibir botão de scroll up
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
+
+  // Efeito de fade no primeiro bloco de conteúdo
   if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
     conteudo_overlay.style.backgroundColor = "transparent"
-    conteudo_overlay.style.zIndex = "-1"
   } else {
     conteudo_overlay.style.backgroundColor = "black"
-    conteudo_overlay.style.zIndex = "1"
   }
 
+  // Exibir botão de scroll up
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
     ScrollUp.style.display = "block"
   } else {
     ScrollUp.style.display = "none"
   }
 
+  // Exibir bloco de conteúdo 2
   if (document.body.scrollTop > 1300 || document.documentElement.scrollTop > 1300) {
     conteudo1.style.opacity = "0"
-    conteudo2.style.zIndex = "0"
     conteudo2.style.opacity = "1"
-    conteudo2.style.zIndex = "1"
     conteudo_container.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_rvr-scaled.jpg')";
-  } else {
-    conteudo1.style.opacity = "1"
-    conteudo1.style.zIndex = "1"
-    conteudo2.style.opacity = "0"
-    conteudo2.style.zIndex = "0"
-    conteudo_container.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_gremios-scaled.jpg')";
-  }
+  } 
+  // Exibir bloco de conteúdo 1
+
 }
 
 // Scroll para o topo da página

@@ -13,7 +13,7 @@
   <link rel="shortcut icon" href="./Assets/favicon_chrono_odyssey.png" type="image/x-icon">
 </head>
 
-<body>
+<body window.onload = validEnquete()>
   <!-- Menu superior -->
   <div id="drop_menu">
     <div class="drop_menu_container">
@@ -108,7 +108,7 @@
   <div class="conteudo_principal">
     <div id="conteudo_container">
       <div id="conteudo_overlay"></div>
-      <div id="conteudo1" class="conteudo_container2">
+      <div id="conteudo1" class="conteudo_container1">
         <p class="conteudo_titulo">Explore lugares épicos</p>
         <p class="conteudo_corpo">Explore templos escondidos nas profundezas de
           Florestas, lar de druidas - ou covil de dragões! Embrenhe-se em cavernas repletas de armadilhas, onde
@@ -116,11 +116,15 @@
           Ataque-o e conquiste-o para sua própria glória!</p>
       </div>
 
-      <div id="conteudo2" class="conteudo_container3">
-        <p class="conteudo_titulo">Lorem ipsum dolor sit amet</p>
+      <div id="conteudo2" class="conteudo_container2">
+        <p class="conteudo_titulo">Cavalgue pelo mundo</p>
         <p class="conteudo_corpo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam odio facilis tempore
           earum nisi quo suscipit, ad non sint iusto deserunt, quam quaerat labore delectus amet iste consequatur,
           exercitationem ab.</p>
+      </div>
+
+      <div id="conteudo3" class="conteudo_container3">
+        <p class="conteudo_titulo">VOCÊ É BRAVO O SUFICIENTE?</p>
       </div>
     </div>
   </div>
@@ -158,8 +162,18 @@
 
   <!-- Enquete -->
   <div id="ancora_enquete" class="enquete">
-    <!-- bloco esquerdo -->
-    <div class="leftbox">
+    <!-- Bloqueio da enquete caso o usuário não esteja logado -->
+    <div id="bloqueio_enquete">
+      <div class="bloqueio_container">
+        <h1>Você deve estar logado<br>para participar dessa pesquisa</p>
+        <p class="texto_secundario_bloqueio">você pode entrar pelo botão abaixo<br>ou criar uma nova conta</p>
+        <button id="bloqueio_iniciar" class="btn_bloqueio" onclick="popup_login()">INICIAR SESSÃO</button><br>
+        <a href="./cadastro.html"><button class="btn_bloqueio">JUNTAR-SE</button></a>
+      </div>
+    </div>
+
+        <!-- bloco esquerdo -->
+    <div id="bloqueio_leftbox" class="leftbox">
       <div class="container">
         <img id="assinatura_monocromatica" src="./assets/Assinatura.png" />
       </div>
@@ -171,7 +185,7 @@
     </div>
 
     <!-- bloco direito -->
-    <div class="rightbox">
+    <div id="bloqueio_rightbox" class="rightbox">
       <div class="rightbox_container">
         <div id="votacao">
           <div class="rb_container1">

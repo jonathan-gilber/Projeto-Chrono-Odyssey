@@ -256,7 +256,7 @@ body {
   /* Conteúdo principal */
   .conteudo_principal {
     width: 100%;
-    height: 2000px;
+    height: 2500px;
     background-color: #b9b9b9;
     margin-top: -4px;
   }
@@ -282,6 +282,21 @@ body {
     z-index: 1;
     position: absolute;
     transition: 1s all ease;
+    background-color: black;
+  }
+
+  .conteudo_container1 {
+    width: 60%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s linear;
   }
 
   .conteudo_container2 {
@@ -292,15 +307,16 @@ body {
     justify-content: center;
     align-items: center;
     cursor: default;
-    position: relative;
-    z-index: 0;
-    opacity: 1;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
     transition: opacity 0.5s linear;
   }
 
   .conteudo_container3 {
-    width: 60%;
-    height: 50%;
+    background-color: black;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -317,6 +333,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 48px;
     line-height: 0px;
+    text-shadow: 4px 4px 6px black;
   }
 
   .conteudo_corpo {
@@ -324,6 +341,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 24px;
     text-align: center;
+    text-shadow: 4px 4px 6px black;
   }
 
   /* Galeria de mídias */
@@ -500,6 +518,63 @@ body {
     }
 
 /* Enquete */
+#bloqueio_enquete {
+  position: absolute;
+  z-index: 1;
+  height: 500px;
+  width: 80%;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.btn_bloqueio {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 15px 0 15px;
+  border-radius: 5px;
+  height: 40px;
+  width: 130px;
+  margin-left: 6px;
+  transition: all 0.4s ease-in-out;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btn_bloqueio:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+#bloqueio_iniciar {
+  background-color: white;
+  color: black;
+}
+
+#bloqueio_iniciar:hover {
+  background-color: rgb(199, 199, 199);
+}
+
+.texto_secundario_bloqueio {
+  font-size: 16px;
+}
+
+.bloqueio_container {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .enquete {
   height: 108vh;
   width: 100%;
@@ -515,6 +590,7 @@ body {
 }
 
 .leftbox {
+  filter: blur(8px);
   background-color: #6c8a99;
   height: 500px;
   width: 30%;
@@ -584,6 +660,8 @@ body {
 
 /* bloco de conteúdo direito */
 .rightbox {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
   background-color: rgb(255, 255, 255);
   height: 500px;
   width: 50%;
