@@ -44,9 +44,15 @@ function votacao(voto, idUsuario, opcaoVoto) {
     return database.executar(instrucao);
 }
 
+function pegarVotos() {
+    var instrucao = `select opcaoVoto,count(*) qtdVotos from votos group by voto;`
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     votacao,
+    pegarVotos,
 };

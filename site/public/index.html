@@ -13,7 +13,7 @@
   <link rel="shortcut icon" href="./Assets/favicon_chrono_odyssey.png" type="image/x-icon">
 </head>
 
-<body window.onload = validEnquete()>
+<body window.onload=validEnquete();verGrafico()>
   <!-- Menu superior -->
   <div id="drop_menu">
     <div class="drop_menu_container">
@@ -117,7 +117,7 @@
       </div>
 
       <div id="conteudo2" class="conteudo_container2">
-        <p class="conteudo_titulo">Cavalgue pelo mundo</p>
+        <p class="conteudo_titulo">Viaje pelo mundo</p>
         <p class="conteudo_corpo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam odio facilis tempore
           earum nisi quo suscipit, ad non sint iusto deserunt, quam quaerat labore delectus amet iste consequatur,
           exercitationem ab.</p>
@@ -166,13 +166,13 @@
     <div id="bloqueio_enquete">
       <div class="bloqueio_container">
         <h1>Você deve estar logado<br>para participar dessa pesquisa</p>
-        <p class="texto_secundario_bloqueio">você pode entrar pelo botão abaixo<br>ou criar uma nova conta</p>
-        <button id="bloqueio_iniciar" class="btn_bloqueio" onclick="popup_login()">INICIAR SESSÃO</button><br>
-        <a href="./cadastro.html"><button class="btn_bloqueio">JUNTAR-SE</button></a>
+          <p class="texto_secundario_bloqueio">você pode entrar pelo botão abaixo<br>ou criar uma nova conta</p>
+          <button id="bloqueio_iniciar" class="btn_bloqueio" onclick="popup_login()">INICIAR SESSÃO</button><br>
+          <a href="./cadastro.html"><button class="btn_bloqueio">JUNTAR-SE</button></a>
       </div>
     </div>
 
-        <!-- bloco esquerdo -->
+    <!-- bloco esquerdo -->
     <div id="bloqueio_leftbox" class="leftbox">
       <div class="container">
         <img id="assinatura_monocromatica" src="./assets/Assinatura.png" />
@@ -199,7 +199,7 @@
                 <input type="radio" id="form_graficos" name="tela1" value="1">
                 <span>Gráficos</span>
               </label><br>
-              
+
               <label for="form_jogabilidade">
                 <input type="radio" id="form_jogabilidade" name="tela1" value="2">
                 <span>Jogabilidade</span>
@@ -218,7 +218,7 @@
           </div>
 
           <div class="rb_container3">
-            <button class="btn_votar" onclick="votar()">Votar⠀✓</button>
+            <button class="btn_votar" onclick="votar();verGrafico()">Votar⠀✓</button>
             <span id="span_voto"></span>
           </div>
         </div>
@@ -226,8 +226,8 @@
         <!-- Chart JS -->
         <div id="div_chartjs">
           <div class="chart_container">
-          <p id="texto_chart1"></p>
-          <p id="texto_chart2"></p>
+            <p id="texto_chart1"></p>
+            <p id="texto_chart2"></p>
           </div>
           <canvas id="myChart"></canvas>
         </div>
@@ -320,34 +320,64 @@
   <button onclick="topFunction()" id="ScrollUp">↑</button>
 
 </body>
+
 </html>
 
 <script>
-  const labels = [
-    'Gráfico',
-    'Jogabilidade',
-    'História',
-    'Combate',
-  ];
 
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'O que mais te atrai em Chrono Odyssey?',
-      backgroundColor: '#6c8a99',
-      borderColor: '#202020',
-      data: [21, 13, 9, 15],
-    }]
-  };
+  var valores = [];
 
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {}
-  };
+  function verGrafico() {
+    fetch("/usuarios/pegar-votos")
+      .then(function (resultado) {
+        resultado.json()
+          .then(function (json) {
+            console.log(json);
 
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
+
+            for (var i = 0; i < json.length; i++) {
+              valores.push(json[i].qtdVotos)
+            }
+
+            console.log(valores);
+          })
+          .catch(function (erro) {
+            console.error(erro);
+          })
+      })
+      .catch(function (erro) {
+        console.error(erro);
+      });
+
+      setTimeout(() => {
+        const labels = [
+        'Gráfico',
+        'Jogabilidade',
+        'História',
+        'Combate',
+      ];
+
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'O que mais te atrai em Chrono Odyssey?',
+          backgroundColor: '#6c8a99',
+          borderColor: '#202020',
+          //data: [valores[0], valores[1], valores[2], valores[3]],
+          data: [valores[0], valores[1], valores[2], valores[3]],
+        }]
+      };
+
+      const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+      };
+
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      )
+      }, 1000)
+  }
 </script>

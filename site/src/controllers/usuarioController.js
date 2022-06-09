@@ -130,10 +130,21 @@ function votacao(req, res) {
     }
 }
 
+function pegarVotos(req, res) {
+    usuarioModel.pegarVotos()
+        .then(function (resultado) {
+            res.json(resultado)
+        })
+        .catch(function (erro) {
+            res.json(erro)
+        })
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
     votacao,
+    pegarVotos,
 }
