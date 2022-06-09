@@ -77,29 +77,35 @@ function toggleMusica() {
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-
-  // Efeito de fade no primeiro bloco de conteúdo
   if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
     conteudo_overlay.style.backgroundColor = "transparent"
+    conteudo_overlay.style.zIndex = "-1"
   } else {
     conteudo_overlay.style.backgroundColor = "black"
+    conteudo_overlay.style.zIndex = "1"
   }
 
-  // Exibir botão de scroll up
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    ScrollUp.style.display = "block";
     ScrollUp.style.display = "block"
   } else {
     ScrollUp.style.display = "none"
   }
 
-  // Exibir bloco de conteúdo 2
   if (document.body.scrollTop > 1300 || document.documentElement.scrollTop > 1300) {
     conteudo1.style.opacity = "0"
+    conteudo1.style.zIndex = "0"
     conteudo2.style.opacity = "1"
+    conteudo2.style.zIndex = "1"
     conteudo_container.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_rvr-scaled.jpg')";
-  } 
-  // Exibir bloco de conteúdo 1
-
+  } else {
+    ScrollUp.style.display = "none";
+    conteudo1.style.opacity = "1"
+    conteudo1.style.zIndex = "1"
+    conteudo2.style.opacity = "0"
+    conteudo2.style.zIndex = "0"
+    conteudo_container.style.backgroundImage = "url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_gremios-scaled.jpg')";
+  }
 }
 
 // Scroll para o topo da página
