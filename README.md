@@ -1,5 +1,7 @@
 # Chrono Odyssey - Site de Publisher
 
+![Chrono Odyssey](https://iili.io/KrmWN6P.png)
+
 Projeto individual desenvolvido como trabalho final do primeiro semestre do curso de **Análise e Desenvolvimento de Sistemas**. O objetivo deste projeto foi demonstrar minhas competências em **desenvolvimento web**, apresentando os conhecimentos adquiridos ao longo do semestre, assim como minhas habilidades de **comunicação e apresentação**.
 
 O tema do projeto foi inspirado no jogo **Chrono Odyssey**, e o site foi criado com a ideia de ser um **site de publisher**, fazendo propagando do jogo aos consumidores.
