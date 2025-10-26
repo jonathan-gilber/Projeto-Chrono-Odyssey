@@ -3,7 +3,6 @@ body {
   background-color: #37474f;
 }
 
-/* tela */
 .conteudo {
   height: 700px;
   width: 100%;
@@ -37,7 +36,6 @@ body {
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
 }
 
-/* bloco de conteúdo esquerdo */
 .leftbox {
   background-color: #6c8a99;
   height: 550px;
@@ -95,7 +93,6 @@ body {
   font-size: 28px;
 }
 
-/* bloco de conteúdo direito */
 .rightbox {
   background-color: rgb(255, 255, 255);
   height: 550px;
@@ -245,7 +242,6 @@ body {
   justify-content: center;
 }
 
-/* Já possui uma conta? */
 
 #possui_conta {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,

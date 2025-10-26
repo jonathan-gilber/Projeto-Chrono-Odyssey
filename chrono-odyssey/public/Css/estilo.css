@@ -6,20 +6,17 @@ body {
   margin: 0;
 }
 
-/* Scroll Bar */
 body::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-/* Caminho do scroll */
 body::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: rgba(255, 255, 255);
   border: 1px solid #ccc;
 }
 
-/* Barra de scroll */
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #aaa;
@@ -34,7 +31,6 @@ body::-webkit-scrollbar-thumb:active{
   background-color: #575757;
 }
 
-/* Navbar */
 .overlay_navbar {
   width: 100%;
   height: 10%;
@@ -162,7 +158,6 @@ body::-webkit-scrollbar-thumb:active{
   cursor: default;
 }
 
-/* Footer */
 .footer {
   height: auto;
   background-color: #111;
