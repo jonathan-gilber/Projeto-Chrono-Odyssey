@@ -14,7 +14,6 @@
 </head>
 
 <body window.onload=validEnquete();verGrafico()>
-  <!-- Menu superior -->
   <div id="drop_menu">
     <div class="drop_menu_container">
       <div class="box1">
@@ -56,9 +55,7 @@
     </div>
   </div>
 
-  <!-- Navbar -->
   <div id="id_navbar" class="overlay_navbar">
-    <!-- Bloco esquerdo -->
     <div id="navbar_blocoEsq">
       <img id="assinatura" src="./assets/Assinatura.png" />
       <button id="btn_down_arrow" onclick="toggle()">
@@ -69,7 +66,6 @@
       <button class="btn_navbar" onclick="ancoraEnquete()">ENQUETE</button>
     </div>
 
-    <!-- Bloco direito -->
     <div id="navbar_blocoDir">
       <button id="btn_iniciar" class="btn_navbar" onclick="popup_login()">INICIAR SESSÃO</button>
       <button id="btn_juntar" onclick="window.location.href='cadastro.html'">JUNTAR-SE</button>
@@ -78,7 +74,6 @@
     </div>
   </div>
 
-  <!-- Hero -->
   <div class="hero">
     <video class="videoBackground" autoplay muted loop>
       <source src="./Assets/video1_background.mp4" type="video/mp4" />
@@ -104,7 +99,6 @@
     </div>
   </div>
 
-  <!-- conteúdo principal -->
   <div class="conteudo_principal">
     <div id="conteudo_container">
       <div id="conteudo_overlay"></div>
@@ -129,12 +123,12 @@
     </div>
   </div>
 
-  <!-- Galeria de Midias -->
   <div class="galeria_texto_div">
     <span id="ancora_galeria">.</span>
     <p class="galeria_texto">CONTEÚDO EXCLUSIVO</p>
     <p class="galeria_texto2">ASSISTA, VEJA, SINTA</p>
   </div>
+
   <div class="container_galeria">
     <div id="imagem_atual" class="frame_principal"></div>
     <div class="frames_secundarios">
@@ -157,12 +151,20 @@
         <div onclick="frame_principal(id)" id="c4f1"></div>
         <div onclick="frame_principal(id)" id="c4f2"></div>
       </div>
+
+      <div id="container5">
+        <div onclick="frame_principal(id)" id="c5f1"></div>
+        <div onclick="frame_principal(id)" id="c5f2"></div>
+      </div>
+
+      <div id="container6">
+        <div onclick="frame_principal(id)" id="c6f1"></div>
+        <div onclick="frame_principal(id)" id="c6f2"></div>
+      </div>
     </div>
   </div>
 
-  <!-- Enquete -->
   <div id="ancora_enquete" class="enquete">
-    <!-- Bloqueio da enquete caso o usuário não esteja logado -->
     <div id="bloqueio_enquete">
       <div class="bloqueio_container">
         <h1>Você deve estar logado<br>para participar dessa pesquisa</p>
@@ -172,7 +174,6 @@
       </div>
     </div>
 
-    <!-- bloco esquerdo -->
     <div id="bloqueio_leftbox" class="leftbox">
       <div class="container">
         <img id="assinatura_monocromatica" src="./assets/Assinatura.png" />
@@ -184,7 +185,6 @@
       </div>
     </div>
 
-    <!-- bloco direito -->
     <div id="bloqueio_rightbox" class="rightbox">
       <div class="rightbox_container">
         <div id="votacao">
@@ -223,7 +223,6 @@
           </div>
         </div>
 
-        <!-- Chart JS -->
         <div id="div_chartjs">
           <div class="chart_container">
             <p id="texto_chart1"></p>
@@ -235,7 +234,6 @@
     </div>
   </div>
 
-  <!-- Contagem Regressiva -->
   <div class="contador">
     <p id="contagem_texto">Lançamento em</p>
     <p id="demo"></p>
@@ -243,7 +241,6 @@
         JÁ</button></a>
   </div>
 
-  <!-- Footer -->
   <div class="footer">
     <div class="container1">
       <a target="_blank" href="https://twitter.com" class="a_icones"><img class="icones"
@@ -272,7 +269,6 @@
     </div>
   </div>
 
-  <!-- Tela de login (display none) -->
   <div id="div_login">
     <div class="conteudo_login">
       <div class="box">
@@ -363,7 +359,6 @@
           label: 'O que mais te atrai em Chrono Odyssey?',
           backgroundColor: '#6c8a99',
           borderColor: '#202020',
-          //data: [valores[0], valores[1], valores[2], valores[3]],
           data: [valores[0], valores[1], valores[2], valores[3]],
         }]
       };

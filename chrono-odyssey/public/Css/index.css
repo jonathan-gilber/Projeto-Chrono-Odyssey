@@ -155,7 +155,6 @@ body {
   cursor: default;
 }
 
-  /* Hero */
   .hero {
     position: relative;
   }
@@ -253,7 +252,6 @@ body {
     margin-left: 10px;
   }
 
-  /* Conteúdo principal */
   .conteudo_principal {
     width: 100%;
     height: 2500px;
@@ -344,7 +342,6 @@ body {
     text-shadow: 4px 4px 6px black;
   }
 
-  /* Galeria de mídias */
   .galeria_texto_div {
     margin-left: 10%;
   }
@@ -375,9 +372,9 @@ body {
   }
 
   .frame_principal {
-    height: 400px;
+    height: 640px;
     width: 60%;
-    background-image: url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chrono_odyssey_mmorpg-scaled.jpg');
+    background-image: url('../Assets/c1f1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -388,7 +385,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 20%;
-    height: 400px;
+    height: 640px;
     cursor: pointer;
     transition: all 0.4s ease-in-out;
   }
@@ -402,7 +399,7 @@ body {
   }
 
   #container1 {
-    height: 100px;
+    height: 107px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -414,7 +411,7 @@ body {
   #c1f1 {
     width: 50%;
     height: 100%;
-    background-image: url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chrono_odyssey_mmorpg-scaled.jpg');
+    background-image: url('../Assets/c1f1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -423,7 +420,7 @@ body {
   #c1f2 {
     width: 50%;
     height: 100%;
-    background-image: url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_west-scaled.jpg');
+    background-image: url('../Assets/c1f2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -431,7 +428,7 @@ body {
   }
 
   #container2 {
-    height: 100px;
+    height: 107px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -443,7 +440,7 @@ body {
   #c2f1 {
     width: 50%;
     height: 100%;
-    background-image: url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_cuando_sale-scaled.jpg');
+    background-image: url('../Assets/c2f1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -452,7 +449,7 @@ body {
   #c2f2 {
     width: 50%;
     height: 100%;
-    background-image: url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_ps5-scaled.jpg');
+    background-image: url('../Assets/c2f2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -460,7 +457,7 @@ body {
   }
 
   #container3 {
-    height: 100px;
+    height: 107px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -472,7 +469,7 @@ body {
   #c3f1 {
     width: 50%;
     height: 100%;
-    background-image: url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_como_jugar-scaled.jpg');
+    background-image: url('../Assets/c3f1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -481,7 +478,7 @@ body {
   #c3f2 {
     width: 50%;
     height: 100%;
-    background-image: url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_gremios-scaled.jpg');
+    background-image: url('../Assets/c3f2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -489,7 +486,7 @@ body {
   }
 
   #container4 {
-    height: 100px;
+    height: 107px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -501,7 +498,7 @@ body {
   #c4f1 {
     width: 50%;
     height: 100%;
-    background-image: url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_pvp-1-scaled.jpg');
+    background-image: url('../Assets/c4f1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -510,14 +507,71 @@ body {
   #c4f2 {
     width: 50%;
     height: 100%;
-    background-image: url('https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_rvr-scaled.jpg');
+    background-image: url('../Assets/c4f2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     margin-left: 5px;
     }
 
-/* Enquete */
+  #container5 {
+    height: 107px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0 0 5px;
+  }
+
+    #c5f1 {
+    width: 50%;
+    height: 100%;
+    background-image: url('../Assets/c5f1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #c5f2 {
+    width: 50%;
+    height: 100%;
+    background-image: url('../Assets/c5f2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    }
+  
+  #container6 {
+    height: 107px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0 0 5px;
+  }
+
+    #c6f1 {
+    width: 50%;
+    height: 100%;
+    background-image: url('../Assets/c6f1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #c6f2 {
+    width: 50%;
+    height: 100%;
+    background-image: url('../Assets/c6f2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    }
+
 #bloqueio_enquete {
   position: absolute;
   z-index: 1;
@@ -600,7 +654,7 @@ body {
   justify-content: center;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  background-image: url(https://chrono-odyssey.online/wp-content/uploads/2020/12/chronos_odyssey_como_jugar-scaled.jpg);
+  background-image: url('../Assets/c1f1.jpg');
   background-position: 45%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -658,7 +712,6 @@ body {
   margin: 0;
 }
 
-/* bloco de conteúdo direito */
 .rightbox {
   filter: blur(8px);
   -webkit-filter: blur(8px);
@@ -807,7 +860,7 @@ input[type='radio'] {
   width: 100%;
   height: 20%;
 }
-  /* Contagem regressiva */
+
   .contador {
     background-color: #202020;
     width: 100%;
@@ -849,7 +902,6 @@ input[type='radio'] {
   color: #202020;
 }
 
-/* Div modelo pop-up com display none*/
 #div_login {
   background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
@@ -861,7 +913,6 @@ input[type='radio'] {
   position: fixed;
 }
 
-/* Tela de login */
 .conteudo_login {
   height: 100%;
   width: 100%;
